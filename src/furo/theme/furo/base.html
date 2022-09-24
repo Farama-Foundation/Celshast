@@ -81,6 +81,26 @@
     {%- block extrahead -%}{%- endblock -%}
   </head>
   <body>
+
+    <header class="farama-header">
+      <div class="farama-header__left">
+        <a href="https://farama.org/">
+          <img class="farama-header__logo" src="{{ pathto('_static/img/farama_solid_white.svg', 1) }}">
+          <h1 class="farama-header__title">The Farama Foundation</h1>
+        </a>
+      </div>
+      <div class="farama-header__right">
+        <ul class="farama-header__menu">
+          <li>
+            <a href="https://gymnasium.farama.org">Gymnasium</a>
+          </li>
+          <li>
+            <a href="https://pettingzoo.farama.org">PettingZoo</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
     {% block body %}
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
@@ -88,6 +108,43 @@
     {% endblock %}
 
     {%- block scripts -%}
+
+    {# Gtag #}
+    {% if theme_gtag -%}
+        <script>
+          (() => {
+              if (!localStorage.getItem("shownCookieAlert")) {
+                  const boxElem = document.createElement("div");
+                  boxElem.classList.add("cookie-alert");
+                  const containerElem = document.createElement("div");
+                  containerElem.classList.add("cookie-alert__container");
+                  const textElem = document.createElement("p");
+                  textElem.innerHTML = `This page uses <a href="https://analytics.google.com/">
+                                      Google Analytics</a> to collect statistics. You can disable it by blocking
+                                      the JavaScript coming from www.google-analytics.com.`;
+                                      containerElem.appendChild(textElem);
+                  const closeBtn = document.createElement("button");
+                  closeBtn.innerHTML = `<?xml version="1.0" ?><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style></defs><title/><g id="cross"><line class="cls-1" x1="7" x2="25" y1="7" y2="25"/><line class="cls-1" x1="7" x2="25" y1="25" y2="7"/></g></svg>`
+                  closeBtn.onclick = () => {
+                      localStorage.setItem("shownCookieAlert", "true");
+                      boxElem.style.display = "none";
+                  }
+                  containerElem.appendChild(closeBtn);
+                  boxElem.appendChild(containerElem);
+                  document.body.appendChild(boxElem);
+              }
+          })()
+      </script>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id={{ theme_gtag }}"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '{{ theme_gtag }}');
+      </script>
+    {%- endif %}
 
     {# Custom JS #}
     {%- block regular_scripts -%}
