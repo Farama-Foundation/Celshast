@@ -113,7 +113,7 @@ h3
     height: var(--farama-header-height)
     border-bottom: 1px solid var(--color-header-border)
     background-color: var(--color-background-secondary)
-    padding: 0 24px
+    padding: 0 36px 0 24px
 
     a
         color: var(--color-foreground-primary)
@@ -146,14 +146,139 @@ h3
         justify-content: flex-end
         flex: 1
 
-        ul
+        .farama-header__nav
             display: flex
             list-style: none
+            height: 100%
 
             li
                 text-decoration: none
                 margin-left: 20px
+                display: flex
+                align-items: center
                 cursor: pointer
+
+                a
+                    height: 100%
+                    display: flex
+                    align-items: center
+
+                .farama-header__dropdown-container
+                    position: relative
+                    display: flex
+                    align-items: center
+                    height: 100%
+
+                    &:after
+                        content: '▾'
+                        margin-top: 3px
+
+                    &:hover
+                        .farama-header__dropdown-menu
+                            display: block
+
+                    .farama-header__dropdown-menu
+                        position: absolute
+                        top: var(--farama-header-height)
+                        right: 0
+                        border: 1px solid var(--color-background-border)
+                        background: var(--color-background-hover)
+                        z-index: 9999
+                        display: none
+
+                        ul
+                            display: inherit
+                            margin: 0
+                            padding: 6px 14px
+
+                        li
+                            margin: 0
+                            padding: 6px 0
+
+
+        .farama-header-menu
+            position: relative
+
+            .farama-header-menu__btn
+                display: none
+                cursor: pointer
+                margin-right: 18px
+
+            &.active .farama-header-menu__list
+                transform: translateX(0)
+
+            .farama-header-menu__list
+                position: fixed
+                z-index: 99
+                right: 0
+                top: 0
+                width: 240px
+                height: 100%
+                transform: translateX(100%)
+                box-sizing: border-box
+                transition: transform 0.3s ease-in
+                background-color: var(--color-background-secondary)
+                border-left: 1px solid var(--color-background-border)
+
+
+
+                .farama-header-menu-list__header
+                    padding: 15px 18px
+                    border-bottom: 1px solid var(--color-background-border)
+                    display: flex
+
+                    span
+                        display: flex
+                        color: var(--color-sidebar-brand-text)
+                        flex: 1
+
+                    button
+                        display: flex
+                        background: none
+                        outline: none
+                        border: none
+                        cursor: pointer
+
+                        &:active, &:focus
+                            outline: none
+
+                        svg
+                            width: 16px
+                            color: var(--color-foreground-secondary)
+
+                ul
+                    display: inherit
+                    margin: 0
+                    padding: 0
+                    list-style: none
+
+                    li
+
+                        &:hover
+                            background-color: var(--color-background-hover)
+
+                        a
+                            display: block
+                            padding: 12px 18px
+
+                            &:hover
+                                color: inherit
+
+.farama-header-menu__overlay
+    position: fixed
+    top: 0
+    left: 0
+    width: 0
+    height: 0
+    opacity: 0
+    transition: width 0ms, height 0ms, opacity 250ms ease-out
+    background-color: rgba(0, 0, 0, 0.54)
+    z-index: 98
+
+    &.active
+        width: 100vw
+        height: 100vh
+        opacity: 1
 
 .sidebar-brand
     flex-direction: row
@@ -177,8 +302,15 @@ h3
             font-size: var(--font-size--small)
 
         .farama-header__right
-            ul
+            .farama-header__nav
                 display: none
+
+            .farama-header-menu .farama-header-menu__btn
+                display: block
+
+@media (max-width: 350px)
+    .farama-header .farama-header__title
+        width: 110px
 
 body[data-theme="light"]
     .farama-header__logo
