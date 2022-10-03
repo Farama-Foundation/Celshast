@@ -347,15 +347,21 @@ h3
                 display: none
 
             .farama-header-menu
-                .farama-header-menu__btn
-                    display: block
+                .farama-header-menu__list
+                    .farama-header-menu-list__body, .farama-header-menu-list__header
+                        padding: 14px 16px
 
-                .farama-header-menu-list__body, .farama-header-menu-list__header
-                    padding: 14px 16px
 
-@media (max-width: 350px)
-    .farama-header .farama-header__title
-        width: 110px
+
+@media (max-width: 450px)
+    .farama-header
+        .farama-header__title
+            width: 110px
+
+        .farama-header-menu__btn-name
+            text-align: right
+            width: 100px
+
 
 body[data-theme="light"]
     .farama-header__logo
