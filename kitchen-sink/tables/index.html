@@ -5,14 +5,14 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Typography" href="../typography/" /><link rel="prev" title="Structural Elements" href="../structure/" />
 
-    <meta name="generator" content="sphinx-5.2.0.post0, furo 2022.09.15.dev1"/>
+    <meta name="generator" content="sphinx-5.2.3, furo 2022.09.15.dev1"/>
         <title>Tables - Furo</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=2369d5bf2a113d250c0e61edf00f6b0494869a15" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=dfbec4c0ec30de48fc84c6eaaf9ab0b056bb0414" />
     <link rel="stylesheet" type="text/css" href="../../_static/pied-piper-admonition.css" />
     
     
@@ -42,25 +42,46 @@
   <body>
 
     <header class="farama-header">
-      <div class="farama-header__left">
-        <a href="https://farama.org/">
-          <img class="farama-header__logo" src="../../_static/img/farama_solid_white.svg">
-          <h1 class="farama-header__title">The Farama Foundation</h1>
-        </a>
-      </div>
-      <div class="farama-header__right">
-        <ul class="farama-header__nav">
-          <li>
-            <a href="https://gymnasium.farama.org">Gymnasium</a>
-          </li>
-          <li>
-            <a href="https://pettingzoo.farama.org">PettingZoo</a>
-          </li>
-          <li>
-            <div class="farama-header__dropdown-container">
-              More
-              <div class="farama-header__dropdown-menu">
+      <div class="farama-header__container">
+        <div class="farama-header__left">
+          <a href="https://farama.org/">
+            <h1 class="farama-header__title">Furo</h1>
+          </a>
+        </div>
+        <div class="farama-header__right">
+          <div class="farama-header-menu">
+            <div class="farama-header-menu__btn">
+              <span class="farama-header-menu__btn-name">
+                The Farama Foundation
+              </span>
+              <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+                  <defs></defs>
+                  <path d="M 3 4.677 C 3 3.751 3.659 3 4.474 3 L 27.526 3 C 28.341 3 29 3.751 29 4.677 C 29 5.603 28.341 6.354 27.526 6.354 L 4.474 6.354 C 3.659 6.354 3 5.603 3 4.677 Z" bx:origin="0.622825 3.875593"></path>
+                  <path d="M 3 16 C 3 15.074 3.659 14.323 4.474 14.323 L 27.526 14.323 C 28.341 14.323 29 15.074 29 16 C 29 16.926 28.341 17.677 27.526 17.677 L 4.474 17.677 C 3.659 17.677 3 16.926 3 16 Z" bx:origin="0.622825 0.5"></path>
+                  <path d="M 3 27.323 C 3 26.397 3.659 25.646 4.474 25.646 L 27.526 25.646 C 28.341 25.646 29 26.397 29 27.323 C 29 28.249 28.341 29 27.526 29 L 4.474 29 C 3.659 29 3 28.249 3 27.323 Z" bx:origin="0.622825 -2.875591"></path>
+              </svg>
+            </div>
+            <div class="farama-header-menu__list">
+              <div class="farama-header-menu-list__header">
+                <img class="farama-header-menu__logo" src="../../_static/img/farama_solid_white.svg">
+                <span>The Farama Foundation</span>
+                <button id="farama-close-menu">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-close">
+                    <line x1="3" y1="21" x2="21" y2="3"></line>
+                    <line x1="3" y1="3" x2="21" y2="21"></line>
+                  </svg>
+                </button>
+              </div>
+              <div class="farama-header-menu-list__body">
+                <span class="farama-header-menu__section-title">Projects</span>
                 <ul>
+                  <li>
+                    <a href="https://gymnasium.farama.org">Gymnasium</a>
+                  </li>
+                  <li>
+                    <a href="https://pettingzoo.farama.org">PettingZoo</a>
+                  </li>
                   <li>
                     <a href="https://github.com/Farama-Foundation/SuperSuit">SuperSuit</a>
                   </li>
@@ -82,50 +103,7 @@
                   </li>
                 </ul>
               </div>
-          </div>
-          </li>
-        </ul>
-        <div class="farama-header-menu">
-          <span class="farama-header-menu__btn">Projects</span>
-          <div class="farama-header-menu__list">
-            <div class="farama-header-menu-list__header">
-              <span>Projects</span>
-                <button id="farama-close-menu">
-                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-close">
-                    <line x1="3" y1="21" x2="21" y2="3"></line>
-                    <line x1="3" y1="3" x2="21" y2="21"></line>
-                  </svg>
-                </button>
-              </label>
             </div>
-            <ul>
-              <li>
-                <a href="https://gymnasium.farama.org">Gymnasium</a>
-              </li>
-              <li>
-                <a href="https://pettingzoo.farama.org">PettingZoo</a>
-              </li>
-              <li>
-                <a href="https://github.com/Farama-Foundation/SuperSuit">SuperSuit</a>
-              </li>
-              <li>
-                <a href="https://github.com/Farama-Foundation/tinyscaler">Tinyscaler</a>
-              </li>
-              <li>
-                <a href="https://github.com/Farama-Foundation/gym-robotics">Gymnasium-Robotics
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/Farama-Foundation/AutoROM">AutoROM</a>
-              </li>
-              <li>
-                <a href="https://github.com/Farama-Foundation/MiniGrid">MiniGrid</a>
-              </li>
-              <li>
-                <a href="https://github.com/Farama-Foundation/Jumpy">JumPy</a>
-              </li>
-            </ul>
           </div>
         </div>
       </div>
@@ -240,12 +218,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../">
-  
-  
-  <span class="sidebar-brand-text">Furo</span>
-  
-</a><form class="sidebar-search-container" method="get" action="../../search/" role="search">
+      <div class="sidebar-sticky"><form class="sidebar-search-container" method="get" action="../../search/" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
