@@ -241,6 +241,7 @@ h3
                 overflow: auto
 
                 .farama-header-menu-list__header
+                    position: relative
                     width: 100%
                     max-width: 1400px
                     box-sizing: border-box
@@ -252,7 +253,6 @@ h3
 
                     a
                         display: flex
-                        flex: 1
                         align-items: center
 
                         .farama-header-menu__logo
@@ -263,11 +263,14 @@ h3
                             padding-left: 8px
 
                     button
+                        position: absolute
                         display: flex
                         background: none
                         outline: none
                         border: none
                         cursor: pointer
+                        padding-right: inherit
+                        right: 0
 
                         &:active, &:focus
                             outline: none
@@ -352,7 +355,7 @@ h3
             .farama-header-menu
                 .farama-header-menu__list
                     .farama-header-menu-list__body, .farama-header-menu-list__header
-                        padding: 14px 16px
+                        padding: 8px 12px
 
 
 
