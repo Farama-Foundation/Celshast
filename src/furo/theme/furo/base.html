@@ -5,6 +5,13 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark">
+    <meta name="description" content="{{ theme_description }}">
+    <meta property="og:title" content="{{ docstitle if docstitle else project }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="{{ theme_description }}" />
+    <meta property="og:url" content="{{ pageurl|e }}" />
+    <meta property="og:image" content="{{ pathto('_static/' + theme_image, 1) }}" />
+    <meta name="twitter:card" content="summary_large_image">
 
     {%- if metatags %}{{ metatags }}{% endif -%}
 
@@ -106,10 +113,10 @@
                   <path d="M 3 27.323 C 3 26.397 3.659 25.646 4.474 25.646 L 27.526 25.646 C 28.341 25.646 29 26.397 29 27.323 C 29 28.249 28.341 29 27.526 29 L 4.474 29 C 3.659 29 3 28.249 3 27.323 Z" bx:origin="0.622825 -2.875591"></path>
               </svg>
             </div>
-            <div class="farama-header-menu__list">
-              <div class="farama-header-menu-list__header">
+            <div class="farama-header-menu-container">
+              <div class="farama-header-menu__header">
                 <a href="https://farama.org">
-                  <img class="farama-header-menu__logo" src="{{ pathto('_static/img/farama_solid_white.svg', 1) }}">
+                  <img class="farama-header-menu__logo" src="{{ pathto('_static/img/farama_solid_white.svg', 1) }}" alt="The Farama Foundation">
                   <span>The Farama Foundation</span>
                 </a>
                 <button id="farama-close-menu">
@@ -120,35 +127,25 @@
                   </svg>
                 </button>
               </div>
-              <div class="farama-header-menu-list__body">
-                <span class="farama-header-menu__section-title">Projects</span>
-                <ul>
-                  <li>
-                    <a href="https://gymnasium.farama.org">Gymnasium</a>
-                  </li>
-                  <li>
-                    <a href="https://pettingzoo.farama.org">PettingZoo</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/Farama-Foundation/SuperSuit">SuperSuit</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/Farama-Foundation/MiniGrid">MiniGrid</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/Farama-Foundation/gym-robotics">Gymnasium-Robotics
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/Farama-Foundation/tinyscaler">Tinyscaler</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/Farama-Foundation/AutoROM">AutoROM</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/Farama-Foundation/Jumpy">JumPy</a>
-                  </li>
-                </ul>
+              <div class="farama-header-menu__body">
+                {% for key, value in farama_projects.items() -%}
+                <div class="farama-header-menu__section" {% if loop.counter != 1 %} style="padding-left: 24px;" {% endif %}>
+                  <span class="farama-header-menu__section-title">{{ key }}</span>
+                  <ul class="farama-header-menu-list">
+                    {% for project in value -%}
+                    <li>
+                      <a href="{{ project.link }}">
+                        {% if project.icon %}
+                        <img src="{{ project.icon }}">
+                        {% endif %}
+                        {{ project.title }}
+                      </a>
+                    </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+                {% endfor %}
+
               </div>
             </div>
           </div>
@@ -179,7 +176,7 @@
 
       window.onclick = function(event) {
         if (!event.target.matches('.farama-header-menu__btn')) {
-          const dropdown = document.querySelector(".farama-header-menu__list");
+          const dropdown = document.querySelector(".farama-header-menu-container");
           if (dropdown.classList.contains('active')) {
             dropdown.classList.remove('active');
             document.querySelector(".farama-header-menu__overlay").classList.remove("active");

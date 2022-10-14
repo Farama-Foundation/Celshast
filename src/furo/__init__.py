@@ -217,6 +217,96 @@ def _html_page_context(
         ),
     }
 
+    # Projects Menu
+    context["farama_projects"] = {
+        "Documentation": [
+            {
+                "title": "Gymnasium",
+                "link": "https://gymnasium.farama.org",
+                "icon": "_static/img/gymnasium-white.svg"
+            },
+            {
+                "title": "PettingZoo",
+                "link": "https://pettingzoo.farama.org",
+                "icon": "_static/img/pettingzoo-white.svg"
+            },
+            {
+                "title": "MiniGrid",
+                "link": "https://minigrid.farama.org",
+                "icon": "_static/img/minigrid-white.svg"
+            },
+        ],
+        "Mature Projects": [
+            {
+                "title": "SuperSuit",
+                "link": "https://github.com/Farama-Foundation/SuperSuit",
+                "icon": "_static/img/supersuit-white.svg"
+            },
+            {
+                "title": "Gymnasium-Robotics",
+                "link": "https://github.com/Farama-Foundation/gym-robotics",
+                "icon": "_static/img/gymrobotics-white.svg"
+            },
+            {
+                "title": "Tinyscaler",
+                "link": "https://github.com/Farama-Foundation/tinyscaler",
+                "icon": "_static/img/tinyscaler-white.svg"
+            },
+            {
+                "title": "AutoROM",
+                "link": "https://github.com/Farama-Foundation/AutoROM",
+                "icon": "_static/img/autorom-white.svg"
+            },
+            {
+                "title": "JumPy",
+                "link": "https://github.com/Farama-Foundation/Jumpy",
+                "icon": "_static/img/jumpy-white.svg"
+            },
+        ],
+        "Incubating Projects": [
+            {
+                "title": "MAgent2",
+                "link": "https://github.com/Farama-Foundation/MAgent2",
+                "icon": "_static/img/MAgent2-white.svg"
+            },
+            {
+                "title": "Procgen2",
+                "link": "https://github.com/Farama-Foundation/procgen2",
+                "icon": "_static/img/procgen2-white.svg"
+            },
+            {
+                "title": "Miniworld",
+                "link": "https://github.com/Farama-Foundation/MiniWorld",
+                "icon": "_static/img/miniworld-white.svg"
+            },
+            {
+                "title": "D4RL",
+                "link": "https://github.com/Farama-Foundation/D4RL",
+                "icon": "_static/img/d4rl-white.svg"
+            },
+            {
+                "title": "Kabuki",
+                "link": "https://github.com/Farama-Foundation/Kabuki",
+                "icon": "_static/img/kabuki-white.svg"
+            },
+        ],
+        "Foundation": [
+            {
+                "title": "About",
+                "link": "https://farama.org/about",
+            },
+            {
+                "title": "Standards",
+                "link": "https://farama.org/project_standards",
+            },
+            {
+                "title": "Donations",
+                "link": "https://farama.org/donations",
+            },
+        ]
+    }
+
+
 
 def _builder_inited(app: sphinx.application.Sphinx) -> None:
     if app.config.html_theme != "furo":

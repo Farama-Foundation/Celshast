@@ -166,7 +166,7 @@ function setup() {
 function main() {
   document.body.parentNode.classList.remove("no-js");
 
-  header = document.querySelector("header");
+  header = document.querySelectorAll("header")[1];
   tocScroll = document.querySelector(".toc-scroll");
 
   setup();

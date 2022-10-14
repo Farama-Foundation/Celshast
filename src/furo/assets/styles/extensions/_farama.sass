@@ -89,6 +89,7 @@ h3
 
 .cell__image-container img
     max-height: 100%
+    object-fit: contain
 
 .cell__title
     display: flex
@@ -106,14 +107,19 @@ h3
 
 // Farama Header
 
+html:has(.farama-header-menu.active)
+    overflow: hidden
+
 .farama-header
     --farama-header-height: 48px
     position: relative
     display: flex
+    width: 100%
     height: var(--farama-header-height)
     border-bottom: 1px solid var(--color-header-border)
     background-color: var(--color-background-secondary)
     padding: 0 36px 0 24px
+    box-sizing: border-box
 
     .farama-header__container
         width: 100%
@@ -223,10 +229,10 @@ h3
                     width: 20px
                     fill: var(--color-foreground-secondary)
 
-            &.active .farama-header-menu__list
+            &.active .farama-header-menu-container
                 transform: translateY(0)
 
-            .farama-header-menu__list
+            .farama-header-menu-container
                 position: fixed
                 z-index: 99
                 right: 0
@@ -240,7 +246,7 @@ h3
                 border-left: 1px solid var(--color-background-border)
                 overflow: auto
 
-                .farama-header-menu-list__header
+                .farama-header-menu__header
                     position: relative
                     width: 100%
                     max-width: 1400px
@@ -279,37 +285,50 @@ h3
                             width: 20px
                             color: var(--color-foreground-secondary)
 
-                .farama-header-menu-list__body
+                .farama-header-menu__body
+                    display: flex
                     width: 100%
                     max-width: 1400px
                     padding: 22px 52px
                     box-sizing: border-box
                     margin: 0 auto
+                    flex-wrap: wrap
 
-                    .farama-header-menu__section-title
-                        display: block
-                        font-size: var(--font-size--normal)
-                        font-weight: bold
-                        text-transform: uppercase
-                        margin-bottom: 12px
+                    .farama-header-menu__section
+                        min-width: 250px
+                        margin-bottom: 24px
 
-                    ul
-                        display: inherit
-                        margin: 0
-                        padding: 0
-                        list-style: none
+                        .farama-header-menu__section-title
+                            display: block
+                            font-size: var(--font-size--normal)
+                            font-weight: bold
+                            text-transform: uppercase
+                            margin-bottom: 12px
 
-                        li
+                        .farama-header-menu-list
+                            display: inherit
+                            margin: 0
+                            padding: 0
+                            list-style: none
 
-                            &:hover
-                                background-color: var(--color-background-hover)
-
-                            a
-                                display: block
-                                padding: 12px 18px
+                            li
 
                                 &:hover
-                                    color: inherit
+                                    background-color: var(--color-background-hover)
+
+
+                                a
+                                    display: flex
+                                    padding: 12px 18px
+                                    align-items: center
+
+                                    &:hover
+                                        color: inherit
+
+                                    img
+                                        width: 24px
+                                        margin-right: 10px
+
 
 .farama-header-menu__overlay
     position: fixed
@@ -341,6 +360,16 @@ h3
         font-size: 1.3rem
         padding-left: 11px
 
+.mobile-header
+    .header-center
+        transition: opacity 0.2s easy-in
+        opacity: 0
+
+.mobile-header.scrolled
+    .header-center
+        opacity: 1
+
+
 @media (max-width: 600px)
     .farama-header
         padding: 0 4px
@@ -353,13 +382,13 @@ h3
                 display: none
 
             .farama-header-menu
-                .farama-header-menu__list
-                    .farama-header-menu-list__body, .farama-header-menu-list__header
+                .farama-header-menu-container
+                    .farama-header-menu__body, .farama-header-menu__header
                         padding: 8px 12px
 
 
 
-@media (max-width: 450px)
+@media (max-width: 480px)
     .farama-header
         .farama-header__title
             width: 110px
