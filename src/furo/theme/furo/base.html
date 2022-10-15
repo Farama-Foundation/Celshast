@@ -10,7 +10,10 @@
     <meta property="og:type" content="website" />
     <meta property="og:description" content="{{ theme_description }}" />
     <meta property="og:url" content="{{ pageurl|e }}" />
-    <meta property="og:image" content="{{ pathto('_static/' + theme_image, 1) }}" />
+    {%- if theme_image -%}
+      <meta property="og:image" content="{{ pathto(html_baseurl + '/_static/' + theme_image, 1) }}" />
+    {%- endif -%}
+
     <meta name="twitter:card" content="summary_large_image">
 
     {%- if metatags %}{{ metatags }}{% endif -%}
@@ -88,7 +91,6 @@
     {%- block extrahead -%}{%- endblock -%}
   </head>
   <body>
-
     <header class="farama-header">
       <div class="farama-header__container">
         <div class="farama-header__left">

@@ -217,6 +217,9 @@ def _html_page_context(
         ),
     }
 
+    # Base url
+    context["html_baseurl"] = app.config.html_baseurl
+
     # Projects Menu
     context["farama_projects"] = {
         "Documentation": [

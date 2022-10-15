@@ -21,7 +21,6 @@ h3
     left: 0
     z-index: 99999
 
-
 .cookie-alert__container
     display: flex
     align-items: center
@@ -29,10 +28,8 @@ h3
     max-width: calc(100% - 28px)
     margin: auto
 
-
 .cookie-alert p
     flex: 1
-
 
 .cookie-alert button
     background-color: transparent
@@ -42,14 +39,11 @@ h3
     padding: 0
     cursor: pointer
 
-
 .cookie-alert button svg .cls-1
-     stroke: var(--color-foreground-primary)
-
+    stroke: var(--color-foreground-primary)
 
 .cookie-alert button svg
     width: 100%
-
 
 // Env Icons
 
@@ -57,14 +51,12 @@ h3
     margin-top: 24px
     margin-bottom: -18px
 
-
 .farama-env-icon-container:has(+ div > h1),
 .farama-env-icon-container:has(+ div > h2)
     margin-bottom: -24px
 
 .farama-env-icon
     height: 32px
-
 
 // Envinronments grid
 
@@ -103,7 +95,6 @@ h3
     width: 240px
     margin: 12px auto
     display: block
-
 
 // Farama Header
 
@@ -208,7 +199,6 @@ html:has(.farama-header-menu.active)
                             margin: 0
                             padding: 6px 0
 
-
         .farama-header-menu
             position: relative
             display: flex
@@ -219,7 +209,7 @@ html:has(.farama-header-menu.active)
                 cursor: pointer
 
                 .farama-header-menu__btn-name
-                    color:  var(--color-foreground-secondary)
+                    color: var(--color-foreground-secondary)
                     padding-right: 6px
                     cursor: pointer
                     font-size: 14px
@@ -252,7 +242,7 @@ html:has(.farama-header-menu.active)
                     max-width: 1400px
                     box-sizing: border-box
                     margin: 0 auto
-                    padding: 7px 32px
+                    padding: 7px 52px
                     border-bottom: 1px solid var(--color-background-border)
                     display: flex
                     align-items: center
@@ -316,7 +306,6 @@ html:has(.farama-header-menu.active)
                                 &:hover
                                     background-color: var(--color-background-hover)
 
-
                                 a
                                     display: flex
                                     padding: 12px 18px
@@ -328,7 +317,6 @@ html:has(.farama-header-menu.active)
                                     img
                                         width: 24px
                                         margin-right: 10px
-
 
 .farama-header-menu__overlay
     position: fixed
@@ -369,6 +357,9 @@ html:has(.farama-header-menu.active)
     .header-center
         opacity: 1
 
+@media (max-width: 950px)
+    .farama-header .farama-header__right .farama-header-menu .farama-header-menu-container .farama-header-menu__header
+        padding: 7px 42px
 
 @media (max-width: 600px)
     .farama-header
@@ -386,8 +377,6 @@ html:has(.farama-header-menu.active)
                     .farama-header-menu__body, .farama-header-menu__header
                         padding: 8px 12px
 
-
-
 @media (max-width: 480px)
     .farama-header
         .farama-header__title
@@ -397,7 +386,6 @@ html:has(.farama-header-menu.active)
             text-align: right
             width: 100px
 
-
 body[data-theme="light"]
     .farama-header-menu__logo
         filter: invert(1)
@@ -405,5 +393,6 @@ body[data-theme="light"]
 // Github math render
 
 body[data-theme="dark"]
+
     img[src*="//render.githubusercontent.com/render/math"]
         filter: invert(90%)
