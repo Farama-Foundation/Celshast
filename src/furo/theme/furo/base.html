@@ -138,7 +138,7 @@
                     <li>
                       <a href="{{ project.link }}">
                         {% if project.icon %}
-                        <img src="{{ project.icon }}">
+                        <img src="{{ pathto(project.icon, 1) }}">
                         {% endif %}
                         {{ project.title }}
                       </a>
