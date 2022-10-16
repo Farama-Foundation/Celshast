@@ -303,7 +303,7 @@ def _html_page_context(
                 "link": "https://farama.org/project_standards",
             },
             {
-                "title": "Donations",
+                "title": "Donate",
                 "link": "https://farama.org/donations",
             },
         ]
