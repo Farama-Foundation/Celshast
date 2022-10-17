@@ -228,7 +228,7 @@ html:has(.farama-header-menu.active)
                 right: 0
                 top: 0
                 width: 100%
-                height: 100vh
+                height: calc(100vh - calc(100vh - 100%))
                 transform: translateY(-100vh)
                 box-sizing: border-box
                 transition: transform 0.2s ease-in
@@ -374,8 +374,10 @@ html:has(.farama-header-menu.active)
 
             .farama-header-menu
                 .farama-header-menu-container
-                    .farama-header-menu__body, .farama-header-menu__header
+                    .farama-header-menu__header
                         padding: 8px 12px
+                    .farama-header-menu__body
+                        padding: 18px 12px
 
 @media (max-width: 480px)
     .farama-header
