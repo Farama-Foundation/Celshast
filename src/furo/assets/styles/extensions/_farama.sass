@@ -357,6 +357,21 @@ html:has(.farama-header-menu.active)
     .header-center
         opacity: 1
 
+// Sphinx Gallery
+
+.sphx-glr-script-out
+    color: var(--color-foreground-secondary)
+    display: flex
+    gap: 0.5em
+
+.sphx-glr-script-out::before
+    content: "Out:"
+    line-height: 1.4
+    padding-top: 10px
+
+.sphx-glr-script-out .highlight
+    overflow-x: auto
+
 @media (max-width: 950px)
     .farama-header .farama-header__right .farama-header-menu .farama-header-menu-container .farama-header-menu__header
         padding: 7px 42px
