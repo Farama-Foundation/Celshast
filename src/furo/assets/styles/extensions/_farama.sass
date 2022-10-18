@@ -102,7 +102,7 @@ html:has(.farama-header-menu.active)
     overflow: hidden
 
 .farama-header
-    --farama-header-height: 48px
+    --farama-header-height: 52px
     position: relative
     display: flex
     width: 100%
@@ -127,14 +127,14 @@ html:has(.farama-header-menu.active)
             color: var(--color-foreground-secondary)
 
     .farama-header__logo
-        --farama-header-logo-margin: 6px
+        --farama-header-logo-margin: 10px
         max-height: calc(var(--farama-header-height) - var(--farama-header-logo-margin))
         margin: var(--farama-header-logo-margin)
 
     .farama-header__title
         font-size: var(--font-size--normal)
         font-weight: normal
-        margin: 0
+        margin: 0 0 2px 0
         padding: 0 0 0 4px
         align-self: center
 
@@ -179,7 +179,7 @@ html:has(.farama-header-menu.active)
 
                     svg
                         width: 32px
-                        fill: var(--color-foreground-secondary)
+                        fill: var(--color-foreground-primary)
 
                     .farama-header__dropdown-menu
                         position: absolute
@@ -209,7 +209,7 @@ html:has(.farama-header-menu.active)
                 cursor: pointer
 
                 .farama-header-menu__btn-name
-                    color: var(--color-foreground-secondary)
+                    color: var(--color-foreground-primary)
                     padding-right: 6px
                     cursor: pointer
                     font-size: 14px
@@ -217,19 +217,19 @@ html:has(.farama-header-menu.active)
 
                 svg
                     width: 20px
-                    fill: var(--color-foreground-secondary)
+                    fill: var(--color-foreground-primary)
 
             &.active .farama-header-menu-container
-                transform: translateY(0)
+                transform: translateY(100vh)
 
             .farama-header-menu-container
                 position: fixed
                 z-index: 99
                 right: 0
-                top: 0
+                top: -100vh
                 width: 100%
                 height: calc(100vh - calc(100vh - 100%))
-                transform: translateY(-100vh)
+                transform: translateY(0)
                 box-sizing: border-box
                 transition: transform 0.2s ease-in
                 background-color: var(--color-background-secondary)
@@ -273,7 +273,7 @@ html:has(.farama-header-menu.active)
 
                         svg
                             width: 20px
-                            color: var(--color-foreground-secondary)
+                            color: var(--color-foreground-primary)
 
                 .farama-header-menu__body
                     display: flex
