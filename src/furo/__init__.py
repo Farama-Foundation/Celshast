@@ -238,17 +238,17 @@ def _html_page_context(
                 "link": "https://minigrid.farama.org",
                 "icon": "_static/img/minigrid-white.svg"
             },
+            {
+                "title": "Gymnasium-Robotics",
+                "link": "https://robotics.farama.org",
+                "icon": "_static/img/gymrobotics-white.svg"
+            },
         ],
         "Mature Projects": [
             {
                 "title": "SuperSuit",
                 "link": "https://github.com/Farama-Foundation/SuperSuit",
                 "icon": "_static/img/supersuit-white.svg"
-            },
-            {
-                "title": "Gymnasium-Robotics",
-                "link": "https://github.com/Farama-Foundation/gym-robotics",
-                "icon": "_static/img/gymrobotics-white.svg"
             },
             {
                 "title": "Tinyscaler",
