@@ -1,4 +1,5 @@
 import os
+import re
 from sphinx_gallery import gen_rst
 from sphinx_gallery.directives import (
     ImageSg,
@@ -35,7 +36,7 @@ def generate(source_path, tutorials_path):
         gallery_config["min_reported_time"] = float("inf")
         gallery_config["exclude_implicit_doc_regex"] = True
         gallery_config["show_signature"] = False
-        gallery_config["filename_pattern"] = ".*"
+        gallery_config["filename_pattern"] = f"{re.escape(os.sep)}run_"
         gallery_config["reset_modules"] = ()
         gallery_config["image_scrapers"] = tuple([matplotlib_scraper])
 
