@@ -492,35 +492,35 @@ retries are disabled, in which case the causing exception will be raised.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>total</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – <p>Total number of retries to allow. Takes precedence over other counts.</p>
+<li><p><strong>total</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – <p>Total number of retries to allow. Takes precedence over other counts.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">None</span></code> to remove this constraint and fall back on other
 counts.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">0</span></code> to fail on the first retry.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">False</span></code> to disable and imply <code class="docutils literal notranslate"><span class="pre">raise_on_redirect=False</span></code>.</p>
 </p></li>
-<li><p><strong>connect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – <p>How many connection-related errors to retry on.</p>
+<li><p><strong>connect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – <p>How many connection-related errors to retry on.</p>
 <p>These are errors raised before the request is sent to the remote server,
 which we assume has not triggered the server to process the request.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">0</span></code> to fail on the first retry of this type.</p>
 </p></li>
-<li><p><strong>read</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – <p>How many times to retry on read errors.</p>
+<li><p><strong>read</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – <p>How many times to retry on read errors.</p>
 <p>These errors are raised after the request was sent to the server, so the
 request may have side-effects.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">0</span></code> to fail on the first retry of this type.</p>
 </p></li>
-<li><p><strong>redirect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – <p>How many redirects to perform. Limit this to avoid infinite redirect
+<li><p><strong>redirect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – <p>How many redirects to perform. Limit this to avoid infinite redirect
 loops.</p>
 <p>A redirect is a HTTP response with a status code 301, 302, 303, 307 or
 308.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">0</span></code> to fail on the first retry of this type.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">False</span></code> to disable and imply <code class="docutils literal notranslate"><span class="pre">raise_on_redirect=False</span></code>.</p>
 </p></li>
-<li><p><strong>status</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – <p>How many times to retry on bad status codes.</p>
+<li><p><strong>status</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – <p>How many times to retry on bad status codes.</p>
 <p>These are retries made on responses, where status code matches
 <code class="docutils literal notranslate"><span class="pre">status_forcelist</span></code>.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">0</span></code> to fail on the first retry of this type.</p>
 </p></li>
-<li><p><strong>other</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – <p>How many times to retry on other errors.</p>
+<li><p><strong>other</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – <p>How many times to retry on other errors.</p>
 <p>Other errors are errors that are not connect, read, redirect or status errors.
 These errors might be raised after the request was sent to the server, so the
 request might have side-effects.</p>
@@ -544,7 +544,7 @@ A retry is initiated if the request method is in <code class="docutils literal n
 and the response status code is in <code class="docutils literal notranslate"><span class="pre">status_forcelist</span></code>.</p>
 <p>By default, this is disabled with <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </p></li>
-<li><p><strong>backoff_factor</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>) – <p>A backoff factor to apply between attempts after the second try
+<li><p><strong>backoff_factor</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a>) – <p>A backoff factor to apply between attempts after the second try
 (most errors are resolved immediately by a second try without a
 delay). urllib3 will sleep for:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">backoff</span> <span class="n">factor</span><span class="p">}</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="p">({</span><span class="n">number</span> <span class="n">of</span> <span class="n">total</span> <span class="n">retries</span><span class="p">}</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
@@ -555,17 +555,17 @@ for [0.0s, 0.2s, 0.4s, …] between retries. It will never be longer
 than <code class="xref py py-attr docutils literal notranslate"><span class="pre">Retry.DEFAULT_BACKOFF_MAX</span></code>.</p>
 <p>By default, backoff is disabled (set to 0).</p>
 </p></li>
-<li><p><strong>raise_on_redirect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – Whether, if the number of redirects is
+<li><p><strong>raise_on_redirect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – Whether, if the number of redirects is
 exhausted, to raise a MaxRetryError, or to return a response with a
 response code in the 3xx range.</p></li>
-<li><p><strong>raise_on_status</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – Similar meaning to <code class="docutils literal notranslate"><span class="pre">raise_on_redirect</span></code>:
+<li><p><strong>raise_on_status</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – Similar meaning to <code class="docutils literal notranslate"><span class="pre">raise_on_redirect</span></code>:
 whether we should raise an exception, or return a response,
 if status falls in <code class="docutils literal notranslate"><span class="pre">status_forcelist</span></code> range and retries have
 been exhausted.</p></li>
-<li><p><strong>history</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><em>tuple</em></a>) – The history of the request encountered during
+<li><p><strong>history</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a>) – The history of the request encountered during
 each call to <code class="xref py py-meth docutils literal notranslate"><span class="pre">increment()</span></code>. The list is in the order
 the requests occurred. Each list item is of class <code class="xref py py-class docutils literal notranslate"><span class="pre">RequestHistory</span></code>.</p></li>
-<li><p><strong>respect_retry_after_header</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – Whether to respect Retry-After header on status codes defined as
+<li><p><strong>respect_retry_after_header</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – Whether to respect Retry-After header on status codes defined as
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">Retry.RETRY_AFTER_STATUS_CODES</span></code> or not.</p></li>
 <li><p><strong>remove_headers_on_redirect</strong> (<em>iterable</em>) – Sequence of headers to remove from the request when a response
 indicating a redirect is returned before firing off the redirected
@@ -609,7 +609,7 @@ request.</p></li>
 <dd><p>Formula for computing the current backoff</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)">float</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)">float</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -629,7 +629,7 @@ request.</p></li>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>response</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">HTTPResponse</span></code>) – A response object, or None, if the server did not
 return a response.</p></li>
-<li><p><strong>error</strong> (<a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.10)"><em>Exception</em></a>) – An error encountered during the request, or
+<li><p><strong>error</strong> (<a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.11)"><em>Exception</em></a>) – An error encountered during the request, or
 None if the response was received successfully.</p></li>
 </ul>
 </dd>
@@ -689,18 +689,18 @@ this method will return immediately.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>total</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, or </em><em>None</em>) – <p>This combines the connect and read timeouts into one; the read timeout
+<li><p><strong>total</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em>, or </em><em>None</em>) – <p>This combines the connect and read timeouts into one; the read timeout
 will be set to the time leftover from the connect attempt. In the
 event that both a connect timeout and a total are specified, or a read
 timeout and a total are specified, the shorter timeout will be applied.</p>
 <p>Defaults to None.</p>
 </p></li>
-<li><p><strong>connect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, or </em><em>None</em>) – The maximum amount of time (in seconds) to wait for a connection
+<li><p><strong>connect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em>, or </em><em>None</em>) – The maximum amount of time (in seconds) to wait for a connection
 attempt to a server to succeed. Omitting the parameter will default the
 connect timeout to the system default, probably <a class="reference external" href="http://hg.python.org/cpython/file/603b4d593758/Lib/socket.py#l535">the global default
 timeout in socket.py</a>.
 None will set an infinite timeout for connection attempts.</p></li>
-<li><p><strong>read</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, or </em><em>None</em>) – <p>The maximum amount of time (in seconds) to wait between consecutive
+<li><p><strong>read</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em>, or </em><em>None</em>) – <p>The maximum amount of time (in seconds) to wait between consecutive
 read operations for a response from the server. Omitting the parameter
 will default the read timeout to the system default, probably <a class="reference external" href="http://hg.python.org/cpython/file/603b4d593758/Lib/socket.py#l535">the
 global default timeout in socket.py</a>.
@@ -777,7 +777,7 @@ object that sets the individual timeouts to the <code class="docutils literal no
 passed to this function.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>timeout</strong> (<em>integer</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, </em><em>sentinel default object</em><em>, or </em><em>None</em>) – The legacy timeout value.</p>
+<dd class="field-odd"><p><strong>timeout</strong> (<em>integer</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em>, </em><em>sentinel default object</em><em>, or </em><em>None</em>) – The legacy timeout value.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Timeout object</p>
@@ -797,7 +797,7 @@ passed to this function.</p>
 <dd class="field-odd"><p>Elapsed time in seconds.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)">float</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)">float</a></p>
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>urllib3.exceptions.TimeoutStateError</strong> – if you attempt
@@ -885,35 +885,35 @@ retries are disabled, in which case the causing exception will be raised.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>total</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – <p>Total number of retries to allow. Takes precedence over other counts.</p>
+<li><p><strong>total</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – <p>Total number of retries to allow. Takes precedence over other counts.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">None</span></code> to remove this constraint and fall back on other
 counts.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">0</span></code> to fail on the first retry.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">False</span></code> to disable and imply <code class="docutils literal notranslate"><span class="pre">raise_on_redirect=False</span></code>.</p>
 </p></li>
-<li><p><strong>connect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – <p>How many connection-related errors to retry on.</p>
+<li><p><strong>connect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – <p>How many connection-related errors to retry on.</p>
 <p>These are errors raised before the request is sent to the remote server,
 which we assume has not triggered the server to process the request.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">0</span></code> to fail on the first retry of this type.</p>
 </p></li>
-<li><p><strong>read</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – <p>How many times to retry on read errors.</p>
+<li><p><strong>read</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – <p>How many times to retry on read errors.</p>
 <p>These errors are raised after the request was sent to the server, so the
 request may have side-effects.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">0</span></code> to fail on the first retry of this type.</p>
 </p></li>
-<li><p><strong>redirect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – <p>How many redirects to perform. Limit this to avoid infinite redirect
+<li><p><strong>redirect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – <p>How many redirects to perform. Limit this to avoid infinite redirect
 loops.</p>
 <p>A redirect is a HTTP response with a status code 301, 302, 303, 307 or
 308.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">0</span></code> to fail on the first retry of this type.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">False</span></code> to disable and imply <code class="docutils literal notranslate"><span class="pre">raise_on_redirect=False</span></code>.</p>
 </p></li>
-<li><p><strong>status</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – <p>How many times to retry on bad status codes.</p>
+<li><p><strong>status</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – <p>How many times to retry on bad status codes.</p>
 <p>These are retries made on responses, where status code matches
 <code class="docutils literal notranslate"><span class="pre">status_forcelist</span></code>.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">0</span></code> to fail on the first retry of this type.</p>
 </p></li>
-<li><p><strong>other</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – <p>How many times to retry on other errors.</p>
+<li><p><strong>other</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a>) – <p>How many times to retry on other errors.</p>
 <p>Other errors are errors that are not connect, read, redirect or status errors.
 These errors might be raised after the request was sent to the server, so the
 request might have side-effects.</p>
@@ -937,7 +937,7 @@ A retry is initiated if the request method is in <code class="docutils literal n
 and the response status code is in <code class="docutils literal notranslate"><span class="pre">status_forcelist</span></code>.</p>
 <p>By default, this is disabled with <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </p></li>
-<li><p><strong>backoff_factor</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>) – <p>A backoff factor to apply between attempts after the second try
+<li><p><strong>backoff_factor</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a>) – <p>A backoff factor to apply between attempts after the second try
 (most errors are resolved immediately by a second try without a
 delay). urllib3 will sleep for:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">backoff</span> <span class="n">factor</span><span class="p">}</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="p">({</span><span class="n">number</span> <span class="n">of</span> <span class="n">total</span> <span class="n">retries</span><span class="p">}</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
@@ -948,17 +948,17 @@ for [0.0s, 0.2s, 0.4s, …] between retries. It will never be longer
 than <code class="xref py py-attr docutils literal notranslate"><span class="pre">Retry.DEFAULT_BACKOFF_MAX</span></code>.</p>
 <p>By default, backoff is disabled (set to 0).</p>
 </p></li>
-<li><p><strong>raise_on_redirect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – Whether, if the number of redirects is
+<li><p><strong>raise_on_redirect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – Whether, if the number of redirects is
 exhausted, to raise a MaxRetryError, or to return a response with a
 response code in the 3xx range.</p></li>
-<li><p><strong>raise_on_status</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – Similar meaning to <code class="docutils literal notranslate"><span class="pre">raise_on_redirect</span></code>:
+<li><p><strong>raise_on_status</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – Similar meaning to <code class="docutils literal notranslate"><span class="pre">raise_on_redirect</span></code>:
 whether we should raise an exception, or return a response,
 if status falls in <code class="docutils literal notranslate"><span class="pre">status_forcelist</span></code> range and retries have
 been exhausted.</p></li>
-<li><p><strong>history</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><em>tuple</em></a>) – The history of the request encountered during
+<li><p><strong>history</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><em>tuple</em></a>) – The history of the request encountered during
 each call to <code class="xref py py-meth docutils literal notranslate"><span class="pre">increment()</span></code>. The list is in the order
 the requests occurred. Each list item is of class <code class="xref py py-class docutils literal notranslate"><span class="pre">RequestHistory</span></code>.</p></li>
-<li><p><strong>respect_retry_after_header</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – Whether to respect Retry-After header on status codes defined as
+<li><p><strong>respect_retry_after_header</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><em>bool</em></a>) – Whether to respect Retry-After header on status codes defined as
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">Retry.RETRY_AFTER_STATUS_CODES</span></code> or not.</p></li>
 <li><p><strong>remove_headers_on_redirect</strong> (<em>iterable</em>) – Sequence of headers to remove from the request when a response
 indicating a redirect is returned before firing off the redirected
@@ -1002,7 +1002,7 @@ request.</p></li>
 <dd><p>Formula for computing the current backoff</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)">float</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)">float</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1022,7 +1022,7 @@ request.</p></li>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>response</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">HTTPResponse</span></code>) – A response object, or None, if the server did not
 return a response.</p></li>
-<li><p><strong>error</strong> (<a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.10)"><em>Exception</em></a>) – An error encountered during the request, or
+<li><p><strong>error</strong> (<a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.11)"><em>Exception</em></a>) – An error encountered during the request, or
 None if the response was received successfully.</p></li>
 </ul>
 </dd>
@@ -1082,18 +1082,18 @@ this method will return immediately.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>total</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, or </em><em>None</em>) – <p>This combines the connect and read timeouts into one; the read timeout
+<li><p><strong>total</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em>, or </em><em>None</em>) – <p>This combines the connect and read timeouts into one; the read timeout
 will be set to the time leftover from the connect attempt. In the
 event that both a connect timeout and a total are specified, or a read
 timeout and a total are specified, the shorter timeout will be applied.</p>
 <p>Defaults to None.</p>
 </p></li>
-<li><p><strong>connect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, or </em><em>None</em>) – The maximum amount of time (in seconds) to wait for a connection
+<li><p><strong>connect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em>, or </em><em>None</em>) – The maximum amount of time (in seconds) to wait for a connection
 attempt to a server to succeed. Omitting the parameter will default the
 connect timeout to the system default, probably <a class="reference external" href="http://hg.python.org/cpython/file/603b4d593758/Lib/socket.py#l535">the global default
 timeout in socket.py</a>.
 None will set an infinite timeout for connection attempts.</p></li>
-<li><p><strong>read</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, or </em><em>None</em>) – <p>The maximum amount of time (in seconds) to wait between consecutive
+<li><p><strong>read</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em>, or </em><em>None</em>) – <p>The maximum amount of time (in seconds) to wait between consecutive
 read operations for a response from the server. Omitting the parameter
 will default the read timeout to the system default, probably <a class="reference external" href="http://hg.python.org/cpython/file/603b4d593758/Lib/socket.py#l535">the
 global default timeout in socket.py</a>.
@@ -1170,7 +1170,7 @@ object that sets the individual timeouts to the <code class="docutils literal no
 passed to this function.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>timeout</strong> (<em>integer</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, </em><em>sentinel default object</em><em>, or </em><em>None</em>) – The legacy timeout value.</p>
+<dd class="field-odd"><p><strong>timeout</strong> (<em>integer</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a><em>, </em><em>sentinel default object</em><em>, or </em><em>None</em>) – The legacy timeout value.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Timeout object</p>
@@ -1190,7 +1190,7 @@ passed to this function.</p>
 <dd class="field-odd"><p>Elapsed time in seconds.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)">float</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)">float</a></p>
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>urllib3.exceptions.TimeoutStateError</strong> – if you attempt
