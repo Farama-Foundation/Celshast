@@ -47,13 +47,15 @@ h3
 
 // Env Icons
 
-.farama-env-icon-container
-    margin-top: 24px
-    margin-bottom: -18px
+article[role=main]:has(.farama-env-icon-container)
+    .farama-env-icon-container
+        position: absolute
+        display: flex
+        margin-top: 7px
 
-.farama-env-icon-container:has(+ div > h1),
-.farama-env-icon-container:has(+ div > h2)
-    margin-bottom: -24px
+    .section h1:first-child, .section h2:first-child
+        margin-left: 34px
+
 
 .farama-env-icon
     height: 32px
