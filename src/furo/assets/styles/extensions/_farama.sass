@@ -56,7 +56,6 @@ article[role=main]:has(.farama-env-icon-container)
     .section h1:first-child, .section h2:first-child, section h1:first-child, section h2:first-child
         margin-left: 34px
 
-
 .farama-env-icon
     height: 32px
 
@@ -103,9 +102,12 @@ article[role=main]:has(.farama-env-icon-container)
 html:has(.farama-header-menu.active)
     overflow: hidden
 
-.farama-header
+body
     --farama-header-height: 52px
-    position: relative
+    --farama-header-logo-margin: 10px
+
+.farama-header
+    position: absolute
     display: flex
     width: 100%
     height: var(--farama-header-height)
@@ -113,6 +115,7 @@ html:has(.farama-header-menu.active)
     background-color: var(--color-background-secondary)
     padding: 0 36px 0 24px
     box-sizing: border-box
+    z-index: 95
 
     .farama-header__container
         width: 100%
@@ -129,7 +132,6 @@ html:has(.farama-header-menu.active)
             color: var(--color-foreground-secondary)
 
     .farama-header__logo
-        --farama-header-logo-margin: 10px
         max-height: calc(var(--farama-header-height) - var(--farama-header-logo-margin))
         margin: var(--farama-header-logo-margin)
 
@@ -320,21 +322,19 @@ html:has(.farama-header-menu.active)
                                         width: 24px
                                         margin-right: 10px
 
-.farama-header-menu__overlay
-    position: fixed
-    top: 0
-    left: 0
-    width: 0
-    height: 0
-    opacity: 0
-    transition: width 0ms, height 0ms, opacity 250ms ease-out
-    background-color: rgba(0, 0, 0, 0.54)
-    z-index: 98
+.farama-sidebar__title
+    display: flex
+    align-items: center
+    padding-right: 4px
+    min-height: 52px
 
-    &.active
-        width: 100vw
-        height: 100vh
-        opacity: 1
+    img
+        height: calc(var(--farama-header-height) - 20px)
+        margin: var(--farama-header-logo-margin)
+    span
+        color: var(--color-foreground-primary)
+        &:hover
+            text-decoration: none
 
 .sidebar-brand
     flex-direction: row

@@ -1,0 +1,7 @@
+<a class="farama-sidebar__title" href="{{ pathto(master_doc) }}">
+    {%- if theme_light_logo and theme_dark_logo %}
+      <img class="farama-header__logo only-light" src="{{ pathto('_static/' + theme_light_logo, 1) }}" alt="Light Logo"/>
+      <img class="farama-header__logo only-dark" src="{{ pathto('_static/' + theme_dark_logo, 1) }}" alt="Dark Logo"/>
+    {%- endif %}
+    <span class="farama-header__title">{{ docstitle if docstitle else project }}</span>
+  </a>

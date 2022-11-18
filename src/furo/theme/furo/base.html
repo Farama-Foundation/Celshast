@@ -155,8 +155,6 @@
       </div>
     </header>
 
-    <div class="farama-header-menu__overlay"></div>
-
     {% block body %}
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
@@ -169,12 +167,10 @@
     <script>
       let toggleMenu = () => {
         document.querySelector(".farama-header-menu").classList.toggle("active");
-        document.querySelector(".farama-header-menu__overlay").classList.toggle("active");
       }
 
       document.querySelector(".farama-header-menu__btn").addEventListener("click", toggleMenu);
       document.getElementById("farama-close-menu").addEventListener("click", toggleMenu);
-      document.querySelector(".farama-header-menu__overlay").addEventListener("click", toggleMenu);
 
       window.onclick = function(event) {
         if (!event.target.matches('.farama-header-menu__btn')) {
