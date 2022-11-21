@@ -7,6 +7,16 @@ h2
 h3
     font-size: 1.4rem
 
+// If menu is active then all elements except the menu are not visible (i.e. only element with aria-hidden="true")
+html:has(.farama-header-menu.active)
+    visibility: hidden
+
+[aria-hidden="true"]
+    visibility: hidden
+
+[aria-hidden="false"]
+    visibility: visible
+
 // Cookies Alert
 
 .cookie-alert
@@ -210,6 +220,8 @@ body
 
             .farama-header-menu__btn
                 display: flex
+                background: none
+                border: none
                 cursor: pointer
 
                 .farama-header-menu__btn-name
@@ -262,22 +274,20 @@ body
                             color: var(--color-sidebar-brand-text)
                             padding-left: 8px
 
-                    button
+                    .farama-header-menu-header__right
                         position: absolute
-                        display: flex
-                        background: none
-                        outline: none
-                        border: none
-                        cursor: pointer
-                        padding-right: inherit
                         right: 0
+                        padding-right: inherit
 
-                        &:active, &:focus
-                            outline: none
+                        button
+                            display: flex
+                            background: none
+                            border: none
+                            cursor: pointer
 
-                        svg
-                            width: 20px
-                            color: var(--color-foreground-primary)
+                            svg
+                                width: 20px
+                                color: var(--color-foreground-primary)
 
                 .farama-header-menu__body
                     display: flex
