@@ -158,11 +158,22 @@ body
         a
             display: flex
 
+    .farama-header__left--mobile
+        display: none
+
+        .nav-overlay-icon svg
+            width: 20px
+            stroke: var(--color-foreground-primary)
+            fill: var(--color-foreground-primary)
+            stroke-width: 2px
+            padding: 0 6px
+
     .farama-header__right
         display: flex
         align-items: center
         justify-content: flex-end
         flex: 1
+        z-index: 2
 
         .farama-header__nav
             display: flex
@@ -224,16 +235,14 @@ body
                 border: none
                 cursor: pointer
 
-                .farama-header-menu__btn-name
-                    color: var(--color-foreground-primary)
-                    padding-right: 6px
-                    cursor: pointer
-                    font-size: 14px
-                    line-height: 18px
-
+                img
+                    width: 26px
                 svg
-                    width: 20px
-                    fill: var(--color-foreground-primary)
+                    width: 14px
+                    stroke: var(--color-foreground-primary)
+                    stroke-width: 2px
+                    align-self: center
+
 
             &.active .farama-header-menu-container
                 transform: translateY(100vh)
@@ -337,7 +346,8 @@ body
     display: flex
     align-items: center
     padding-right: 4px
-    min-height: 52px
+    min-height: calc(52px - var(--sidebar-search-space-above))
+    margin-top: var(--sidebar-search-space-above)
 
     img
         height: calc(var(--farama-header-height) - 20px)
@@ -385,9 +395,14 @@ body
 .sphx-glr-script-out .highlight
     overflow-x: auto
 
+
 @media (max-width: 950px)
     .farama-header .farama-header__right .farama-header-menu .farama-header-menu-container .farama-header-menu__header
         padding: 7px 42px
+
+    .farama-header .farama-header-menu__btn-name
+        display: none
+
 
 @media (max-width: 600px)
     .farama-header
@@ -396,16 +411,12 @@ body
         .farama-header__title
             font-size: var(--font-size--small)
 
-        .farama-header__right
-            .farama-header__nav
-                display: none
+        .farama-header__right .farama-header-menu .farama-header-menu-container
+            .farama-header-menu__header
+                padding: 8px 12px
+            .farama-header-menu__body
+                padding: 18px 12px
 
-            .farama-header-menu
-                .farama-header-menu-container
-                    .farama-header-menu__header
-                        padding: 8px 12px
-                    .farama-header-menu__body
-                        padding: 18px 12px
 
 @media (max-width: 480px)
     .farama-header
@@ -416,13 +427,16 @@ body
             text-align: right
             width: 100px
 
+
 body[data-theme="light"]
-    .farama-header-menu__logo
+    .farama-white-logo-invert
         filter: invert(1)
 
 // Github math render
 
 body[data-theme="dark"]
+    .farama-black-logo-invert
+        filter: invert(1)
 
     img[src*="//render.githubusercontent.com/render/math"]
         filter: invert(90%)

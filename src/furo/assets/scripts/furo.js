@@ -8,13 +8,13 @@ var header = null;
 var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
 const GO_TO_TOP_OFFSET = 64;
 
-function scrollHandlerForHeader() {
-  if (Math.floor(header.getBoundingClientRect().top) == 0) {
-    header.classList.add("scrolled");
-  } else {
-    header.classList.remove("scrolled");
-  }
-}
+// function scrollHandlerForHeader() {
+//   if (Math.floor(header.getBoundingClientRect().top) == 0) {
+//     header.classList.add("scrolled");
+//   } else {
+//     header.classList.remove("scrolled");
+//   }
+// }
 
 function scrollHandlerForBackToTop(positionY) {
   if (positionY < GO_TO_TOP_OFFSET) {
@@ -62,7 +62,7 @@ function scrollHandlerForTOC(positionY) {
 }
 
 function scrollHandler(positionY) {
-  scrollHandlerForHeader();
+  // scrollHandlerForHeader();
   scrollHandlerForBackToTop(positionY);
   scrollHandlerForTOC(positionY);
 }
@@ -135,15 +135,15 @@ function setupScrollSpy() {
   }
 
   // Scrollspy -- highlight table on contents, based on scroll
-  new Gumshoe(".toc-tree a", {
-    reflow: true,
-    recursive: true,
-    navClass: "scroll-current",
-    offset: () => {
-      let rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
-      return header.getBoundingClientRect().height + 0.5 * rem + 1;
-    },
-  });
+  // new Gumshoe(".toc-tree a", {
+  //   reflow: true,
+  //   recursive: true,
+  //   navClass: "scroll-current",
+  //   offset: () => {
+  //     let rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+  //     return header.getBoundingClientRect().height + 0.5 * rem + 1;
+  //   },
+  // });
 }
 
 function setupTheme() {
@@ -166,7 +166,7 @@ function setup() {
 function main() {
   document.body.parentNode.classList.remove("no-js");
 
-  header = document.querySelectorAll("header")[1];
+  // header = document.querySelectorAll("header")[1];
   tocScroll = document.querySelector(".toc-scroll");
 
   setup();
