@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?digest=91b9f2a71a58ed2481980f1e5725e16457fde93d" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?digest=24b18ece81cb9ff18679a2945b9c89ba44829d18" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/pied-piper-admonition.css" />
     
     
@@ -333,7 +333,7 @@
 
 
 <div class="viewcode-block" id="Timeout"><a class="viewcode-back" href="../../../../reference/api/#urllib3.util.Timeout">[docs]</a><span class="k">class</span> <span class="nc">Timeout</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Timeout configuration.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Timeout configuration.</span>
 
 <span class="sd">    Timeouts can be defined as a default for a pool:</span>
 
@@ -433,7 +433,7 @@
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">_validate_timeout</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Check that a timeout attribute is valid.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check that a timeout attribute is valid.</span>
 
 <span class="sd">        :param value: The timeout value to validate</span>
 <span class="sd">        :param name: The name of the timeout attribute to validate. This is</span>
@@ -479,7 +479,7 @@
 
 <div class="viewcode-block" id="Timeout.from_float"><a class="viewcode-back" href="../../../../reference/api/#urllib3.util.Timeout.from_float">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_float</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">timeout</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Create a new Timeout from a legacy timeout value.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a new Timeout from a legacy timeout value.</span>
 
 <span class="sd">        The timeout value used by httplib.py sets the same timeout on the</span>
 <span class="sd">        connect(), and recv() socket requests. This creates a :class:`Timeout`</span>
@@ -494,7 +494,7 @@
         <span class="k">return</span> <span class="n">Timeout</span><span class="p">(</span><span class="n">read</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span> <span class="n">connect</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Timeout.clone"><a class="viewcode-back" href="../../../../reference/api/#urllib3.util.Timeout.clone">[docs]</a>    <span class="k">def</span> <span class="nf">clone</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Create a copy of the timeout object</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a copy of the timeout object</span>
 
 <span class="sd">        Timeout properties are stored per-pool but each request needs a fresh</span>
 <span class="sd">        Timeout object to ensure each one has its own start/stop configured.</span>
@@ -508,7 +508,7 @@
         <span class="k">return</span> <span class="n">Timeout</span><span class="p">(</span><span class="n">connect</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_connect</span><span class="p">,</span> <span class="n">read</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_read</span><span class="p">,</span> <span class="n">total</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">total</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Timeout.start_connect"><a class="viewcode-back" href="../../../../reference/api/#urllib3.util.Timeout.start_connect">[docs]</a>    <span class="k">def</span> <span class="nf">start_connect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Start the timeout clock, used during a connect() attempt</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Start the timeout clock, used during a connect() attempt</span>
 
 <span class="sd">        :raises urllib3.exceptions.TimeoutStateError: if you attempt</span>
 <span class="sd">            to start a timer that has been started already.</span>
@@ -519,7 +519,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_start_connect</span></div>
 
 <div class="viewcode-block" id="Timeout.get_connect_duration"><a class="viewcode-back" href="../../../../reference/api/#urllib3.util.Timeout.get_connect_duration">[docs]</a>    <span class="k">def</span> <span class="nf">get_connect_duration</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Gets the time elapsed since the call to :meth:`start_connect`.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Gets the time elapsed since the call to :meth:`start_connect`.</span>
 
 <span class="sd">        :return: Elapsed time in seconds.</span>
 <span class="sd">        :rtype: float</span>
@@ -534,7 +534,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">connect_timeout</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Get the value to use when setting a connection timeout.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the value to use when setting a connection timeout.</span>
 
 <span class="sd">        This will be a positive float or integer, the value None</span>
 <span class="sd">        (never timeout), or the default system timeout.</span>
@@ -552,7 +552,7 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">read_timeout</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Get the value for the read timeout.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the value for the read timeout.</span>
 
 <span class="sd">        This assumes some time has elapsed in the connection timeout and</span>
 <span class="sd">        computes the read timeout appropriately.</span>

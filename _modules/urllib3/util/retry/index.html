@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?digest=91b9f2a71a58ed2481980f1e5725e16457fde93d" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?digest=24b18ece81cb9ff18679a2945b9c89ba44829d18" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/pied-piper-admonition.css" />
     
     
@@ -405,7 +405,7 @@
 
 <div class="viewcode-block" id="Retry"><a class="viewcode-back" href="../../../../reference/api/#urllib3.util.Retry">[docs]</a><span class="nd">@six</span><span class="o">.</span><span class="n">add_metaclass</span><span class="p">(</span><span class="n">_RetryMeta</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">Retry</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Retry configuration.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Retry configuration.</span>
 
 <span class="sd">    Each retry attempt will create a new Retry object with updated values, so</span>
 <span class="sd">    they can be safely reused.</span>
@@ -654,7 +654,7 @@
 
 <div class="viewcode-block" id="Retry.from_int"><a class="viewcode-back" href="../../../../reference/api/#urllib3.util.Retry.from_int">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_int</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">retries</span><span class="p">,</span> <span class="n">redirect</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Backwards-compatibility for the old retries format.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Backwards-compatibility for the old retries format.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">retries</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">retries</span> <span class="o">=</span> <span class="n">default</span> <span class="k">if</span> <span class="n">default</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">cls</span><span class="o">.</span><span class="n">DEFAULT</span>
 
@@ -667,7 +667,7 @@
         <span class="k">return</span> <span class="n">new_retries</span></div>
 
 <div class="viewcode-block" id="Retry.get_backoff_time"><a class="viewcode-back" href="../../../../reference/api/#urllib3.util.Retry.get_backoff_time">[docs]</a>    <span class="k">def</span> <span class="nf">get_backoff_time</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Formula for computing the current backoff</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Formula for computing the current backoff</span>
 
 <span class="sd">        :rtype: float</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -707,7 +707,7 @@
         <span class="k">return</span> <span class="n">seconds</span>
 
 <div class="viewcode-block" id="Retry.get_retry_after"><a class="viewcode-back" href="../../../../reference/api/#urllib3.util.Retry.get_retry_after">[docs]</a>    <span class="k">def</span> <span class="nf">get_retry_after</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Get the value of Retry-After in seconds.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the value of Retry-After in seconds.&quot;&quot;&quot;</span>
 
         <span class="n">retry_after</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Retry-After&quot;</span><span class="p">)</span>
 
@@ -731,7 +731,7 @@
         <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">backoff</span><span class="p">)</span>
 
 <div class="viewcode-block" id="Retry.sleep"><a class="viewcode-back" href="../../../../reference/api/#urllib3.util.Retry.sleep">[docs]</a>    <span class="k">def</span> <span class="nf">sleep</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Sleep between retry attempts.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Sleep between retry attempts.</span>
 
 <span class="sd">        This method will respect a server&#39;s ``Retry-After`` response header</span>
 <span class="sd">        and sleep the duration of the time requested. If that is not present, it</span>
@@ -747,7 +747,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_sleep_backoff</span><span class="p">()</span></div>
 
     <span class="k">def</span> <span class="nf">_is_connection_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">err</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Errors when we&#39;re fairly sure that the server did not receive the</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Errors when we&#39;re fairly sure that the server did not receive the</span>
 <span class="sd">        request, so it should be safe to retry.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">ProxyError</span><span class="p">):</span>
@@ -755,13 +755,13 @@
         <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="n">ConnectTimeoutError</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_is_read_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">err</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Errors that occur after the request has been started, so we should</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Errors that occur after the request has been started, so we should</span>
 <span class="sd">        assume that the server began processing it.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="p">(</span><span class="n">ReadTimeoutError</span><span class="p">,</span> <span class="n">ProtocolError</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">_is_method_retryable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Checks if a given HTTP method should be retried upon, depending if</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if a given HTTP method should be retried upon, depending if</span>
 <span class="sd">        it is included in the allowed_methods</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># TODO: For now favor if the Retry implementation sets its own method_whitelist</span>
@@ -781,7 +781,7 @@
         <span class="k">return</span> <span class="kc">True</span>
 
 <div class="viewcode-block" id="Retry.is_retry"><a class="viewcode-back" href="../../../../reference/api/#urllib3.util.Retry.is_retry">[docs]</a>    <span class="k">def</span> <span class="nf">is_retry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">status_code</span><span class="p">,</span> <span class="n">has_retry_after</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Is this method/status code retryable? (Based on allowlists and control</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Is this method/status code retryable? (Based on allowlists and control</span>
 <span class="sd">        variables such as the number of total retries to allow, whether to</span>
 <span class="sd">        respect the Retry-After header, whether this header is present, and</span>
 <span class="sd">        whether the returned status code is on the list of status codes to</span>
@@ -801,7 +801,7 @@
         <span class="p">)</span></div>
 
 <div class="viewcode-block" id="Retry.is_exhausted"><a class="viewcode-back" href="../../../../reference/api/#urllib3.util.Retry.is_exhausted">[docs]</a>    <span class="k">def</span> <span class="nf">is_exhausted</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Are we out of retries?&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Are we out of retries?&quot;&quot;&quot;</span>
         <span class="n">retry_counts</span> <span class="o">=</span> <span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">total</span><span class="p">,</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">connect</span><span class="p">,</span>
@@ -825,7 +825,7 @@
         <span class="n">_pool</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">_stacktrace</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return a new Retry object with incremented retry counters.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a new Retry object with incremented retry counters.</span>
 
 <span class="sd">        :param response: A response object, or None, if the server did not</span>
 <span class="sd">            return a response.</span>
