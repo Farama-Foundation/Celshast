@@ -353,7 +353,7 @@
         githubUser: '{{ github_user }}',
         githubRepo: '{{ github_repo }}',
       };
-      fetch('/_static/versioning/versioning_menu.html').then(response => {
+      fetch('/main/_static/versioning/versioning_menu.html').then(response => {
         if (response.status === 200) {
             response.text().then(text => {
                 const container = document.createElement("div");
