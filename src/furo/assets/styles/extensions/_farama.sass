@@ -1,5 +1,7 @@
 // Farama Base
 
+$farama-background: linear-gradient(to right top, #765e3e, #054f5b)
+
 h1
     font-size: 2.2rem
 h2
@@ -132,6 +134,7 @@ body
         max-width: 1400px
         display: flex
         margin: 0 auto
+        justify-content: space-between
 
     a
         color: var(--color-foreground-primary)
@@ -171,8 +174,6 @@ body
     .farama-header__right
         display: flex
         align-items: center
-        justify-content: flex-end
-        flex: 1
         z-index: 2
 
         .farama-header__nav
@@ -393,6 +394,35 @@ body
 
 .sphx-glr-script-out .highlight
     overflow-x: auto
+
+.sphx-glr-thumbcontainer
+    z-index: 1
+
+div.sphx-glr-download a
+    width: 340px
+    max-width: 100%
+    box-sizing: border-box
+    background: #0f4a65
+
+div.sphx-glr-download a:hover
+    background: #0d3a4e
+    box-shadow: none
+
+body[data-theme="dark"]
+    div.sphx-glr-download a
+        background: #0f4a65
+    div.sphx-glr-download a:hover
+        background: #0d3a4e
+
+body[data-theme="light"]
+    div.sphx-glr-download a
+        background: #f9d4a1
+    div.sphx-glr-download a:hover
+        background: #d9b481
+
+.sphx-glr-thumbcontainer img
+    background-color: white
+    border-radius: 4px
 
 
 @media (max-width: 950px)
