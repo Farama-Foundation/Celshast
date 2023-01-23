@@ -457,15 +457,17 @@ body[data-theme="light"]
             width: 100px
 
 
-body[data-theme="light"]
-    .farama-white-logo-invert
-        filter: invert(1)
+@media (prefers-color-scheme: light)
+    body:not([data-theme="dark"])
+        .farama-white-logo-invert
+            filter: invert(1)
 
-// Github math render
 
-body[data-theme="dark"]
-    .farama-black-logo-invert
-        filter: invert(1)
+@media (prefers-color-scheme: dark)
+    body:not([data-theme="light"])
+        .farama-black-logo-invert
+            filter: invert(1)
 
-    img[src*="//render.githubusercontent.com/render/math"]
-        filter: invert(90%)
+        // Github math render
+        img[src*="//render.githubusercontent.com/render/math"]
+            filter: invert(90%)
