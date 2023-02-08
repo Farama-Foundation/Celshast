@@ -78,10 +78,15 @@ article
       color: var(--color-header-text)
       text-decoration: none
 
+.main-container
+  padding-top: var(--farama-header-height)
+  display: flex
+  flex-direction: column
+  flex: 1
+
 .main
   display: flex
   flex: 1
-  padding-top: var(--farama-header-height)
 
 // Sidebar (left) also covers the entire left portion of screen.
 .sidebar-drawer
@@ -415,6 +420,10 @@ article
     margin-left: auto
     margin-right: auto
 
+  .farama-donate-banner
+    margin-left: auto
+    margin-right: auto
+
 @media (max-width: $content-width + 2* $content-padding)
   // Content should respect window limits.
   .content
@@ -422,6 +431,9 @@ article
     overflow-x: auto
 
 @media (max-width: $content-width)
+  .farama-donate-banner
+    padding: $content-padding--small $content-padding--small !important
+
   .content
     padding: 0 $content-padding--small
     // Don't float sidebars to the right.
