@@ -374,7 +374,7 @@
     </script>
     {%- endif %}
 
-    {% if theme_donations -%}
+    {% if theme_donations == True -%}
     <script>
       (() => {
         const bannerBtns = document.querySelectorAll("#farama-donate-banner button");
