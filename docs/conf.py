@@ -94,6 +94,7 @@ html_theme_options: Dict[str, Any] = {
     "source_repository": "https://github.com/pradyunsg/furo/",
     "source_branch": "main",
     "source_directory": "docs/",
+    "donations": True
 }
 
 if "READTHEDOCS" in os.environ:

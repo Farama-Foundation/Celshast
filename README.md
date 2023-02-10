@@ -2,15 +2,39 @@
 
 A [Farama Foundation](https://farama.org/) <a href="https://www.sphinx-doc.org/">Sphinx</a> documentation theme based on the [Furo template](https://github.com/pradyunsg/furo).
 
-## Building Theme from source
+
+## Build Documentation
+
+To build and serve the documentation website you should go to the `docs/` directory and choose one of the following options.
+
+**Option 1: Build once**
+
+Build:
+```
+make dirhtml
+OR
+sphinx-build -b dirhtml . _build
+```
+
+Serve the generated website using python (you can choose other http servers):
+```
+python -m http.server 8001 --directory _build
+```
+
+**Option 2: Automatically build when a change is made**
+
+Install `sphinx-autobuild`
 
 ```
-pip install nox
+pip install sphinx-autobuild
 ```
 
+Build and serve using:
+
 ```
-nox -s docs-live
+sphinx-autobuild -b dirhtml . _build
 ```
+
 
 ## Google Analytics
 
@@ -19,6 +43,16 @@ To enable Google Analytics add the following theme option in the `conf.py` file.
 ``` python
 html_theme_options = {
     "gtag": "G-6H9C8TWXZ8",
+}
+```
+
+## Donations Banner/Button
+
+To enable the donations banner and sidebar button, add the following theme option in the `conf.py` file.
+
+``` python
+html_theme_options = {
+    "donations": True,
 }
 ```
 
@@ -296,6 +330,20 @@ gen_tutorials.generate(
     os.path.dirname(__file__),
     os.path.join(os.path.dirname(__file__), "tutorials"),
 )
+```
+
+## Building Theme from source
+
+To contribute to the theme you will need to build it. To do that install `nox` using `pip`.
+
+```
+pip install nox
+```
+
+And build the testing documentation using the following command.
+
+```
+nox -s docs-live
 ```
 
 
