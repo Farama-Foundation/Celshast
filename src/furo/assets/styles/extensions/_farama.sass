@@ -326,6 +326,7 @@ body
                             list-style: none
 
                             li
+                                border-radius: var(--sidebar-item-border-radius)
 
                                 &:hover
                                     background-color: var(--color-background-hover)
@@ -347,7 +348,9 @@ body
     align-items: center
     padding-right: 4px
     min-height: calc(52px - var(--sidebar-search-space-above))
-    margin-top: var(--sidebar-search-space-above)
+    margin-top: 0.8rem
+    margin-left: var(--sidebar-search-space-lateral)
+    text-decoration: none
 
     img
         height: calc(var(--farama-header-height) - 20px)
@@ -499,6 +502,17 @@ body[data-theme="light"]
     background-color: white
     border-radius: 4px
 
+// Override Tabs styles
+
+.tab-content > [class^="highlight-"]:first-child .highlight
+    background: var(--color-api-background)
+    border-radius: 6px
+
+.tab-set > input:checked + label, .tab-set > input:checked + label:hover
+    color: var(--color-brand-secondary)
+    border-color: var(--color-brand-secondary)
+
+
 
 @media (max-width: 950px)
     .farama-header .farama-header__right .farama-header-menu .farama-header-menu-container .farama-header-menu__header
@@ -552,13 +566,13 @@ body[data-theme="light"]
 
 
 @media (prefers-color-scheme: light)
-    body:not([data-theme="dark"])
+    body:not(body[data-theme="dark"])
         .farama-white-logo-invert
             filter: invert(1)
 
 
 @media (prefers-color-scheme: dark)
-    body:not([data-theme="light"])
+    body:not(body[data-theme="light"])
         .farama-black-logo-invert
             filter: invert(1)
 

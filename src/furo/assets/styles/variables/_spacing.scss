@@ -11,7 +11,8 @@
   --header-padding: 1rem;
 
   // Sidebar
-  --sidebar-tree-space-above: 1.5rem;
+  --sidebar-tree-space-above: 1.2rem;
+  --sidebar-tree-space-horizontal: 0.5rem;
   --sidebar-caption-space-above: 1rem;
 
   --sidebar-item-line-height: 1rem;
@@ -23,16 +24,20 @@
 
   --sidebar-expander-width: var(--sidebar-item-height); // be square
 
-  --sidebar-search-space-above: 0.5rem;
+  --sidebar-search-space-above: 1.2rem;
+  --sidebar-search-space-lateral: 0.7rem;
   --sidebar-search-input-spacing-vertical: 0.5rem;
   --sidebar-search-input-spacing-horizontal: 0.5rem;
-  --sidebar-search-input-height: 1rem;
+  --sidebar-search-input-height: 1.2rem;
   --sidebar-search-icon-size: var(--sidebar-search-input-height);
 
   // Table of Contents
   --toc-title-padding: 0.25rem 0;
-  --toc-spacing-vertical: 1.5rem;
+  --toc-spacing-vertical: 4.5rem;
   --toc-spacing-horizontal: 1.5rem;
   --toc-item-spacing-vertical: 0.4rem;
   --toc-item-spacing-horizontal: 1rem;
+
+  --sidebar-item-border-radius: 8px;
+  --sidebar-search-border-radius: 8px;
 }

@@ -10,7 +10,7 @@
   --color-problematic: #b30000;
 
   // Base Colors
-  --color-foreground-primary: black; // for main text and headings
+  --color-foreground-primary: #202123; // for main text and headings
   --color-foreground-secondary: #5a5c63; // for secondary text
   --color-foreground-muted: #646776; // for muted text
   --color-foreground-border: #878787; // for content borders
@@ -27,12 +27,15 @@
   --color-announcement-text: #eeebee;
 
   // Brand colors
-  --color-brand-primary: #2962ff;
+  --color-brand-primary: #0f4a65;
   --color-brand-content: #2a5adf;
+  --color-brand-secondary: #7b603b;
+  --color-brand-secondary-transparent: rgba(217, 180, 129, 0.2);
 
   // API documentation
-  --color-api-background: var(--color-background-hover--transparent);
-  --color-api-background-hover: var(--color-background-hover);
+  --color-api-background: #f8f8fb;
+  --color-api-background-hover: var(--color-api-background);
+  --color-sidebar-item-current--hover: var(--color-brand-secondary)
   --color-api-overall: var(--color-foreground-secondary);
   --color-api-name: var(--color-problematic);
   --color-api-pre-name: var(--color-problematic);
@@ -81,24 +84,24 @@
   --color-sidebar-background-border: var(--color-background-border);
 
   --color-sidebar-brand-text: var(--color-foreground-primary);
-  --color-sidebar-caption-text: var(--color-foreground-muted);
+  --color-sidebar-caption-text: var(--color-foreground-primary);
   --color-sidebar-link-text: var(--color-foreground-secondary);
-  --color-sidebar-link-text--top-level: var(--color-brand-primary);
+  --color-sidebar-link-text--top-level: var(--color-foreground-primary);
 
   --color-sidebar-item-background: var(--color-sidebar-background);
-  --color-sidebar-item-background--current: var(
-    --color-sidebar-item-background
-  );
-  --color-sidebar-item-background--hover: linear-gradient(
-    90deg,
-    var(--color-background-hover--transparent) 0%,
-    var(--color-background-hover) var(--sidebar-item-spacing-horizontal),
-    var(--color-background-hover) 100%
-  );
+  --color-sidebar-item-background--current: var(--color-background-hover);
+  // --color-sidebar-item-background--hover: linear-gradient(
+  //   90deg,
+  //   var(--color-background-hover--transparent) 0%,
+  //   var(--color-background-hover) var(--sidebar-item-spacing-horizontal),
+  //   var(--color-background-hover) 100%
+  // );
+  // --color-sidebar-item-background--hover: var(--color-background-hover);
+  --color-sidebar-item-background--hover: var(--color-brand-secondary-transparent);
 
   --color-sidebar-item-expander-background: transparent;
   --color-sidebar-item-expander-background--hover: var(
-    --color-background-hover
+    --color-sidebar-item-background--hover
   );
 
   --color-sidebar-search-text: var(--color-foreground-primary);
@@ -146,8 +149,9 @@
   --color-announcement-text: #eeebee;
 
   // Brand colors
-  --color-brand-primary: #2b8cee;
-  --color-brand-content: #368ce2;
+  --color-brand-primary: #0f4a65;
+  --color-brand-content: #416ce2;
+  --color-brand-secondary: #d3aa71;
 
   // Highlighted text (search)
   --color-highlighted-background: #083563;
@@ -167,4 +171,7 @@
   --color-card-border: var(--color-background-secondary);
   --color-card-background: #18181a;
   --color-card-marginals-background: var(--color-background-hover);
+
+  // API
+  --color-api-background: #202020;
 }

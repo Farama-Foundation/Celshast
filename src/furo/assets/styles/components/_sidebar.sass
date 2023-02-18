@@ -32,7 +32,7 @@
 .sidebar-search-container
   display: flex
   align-items: center
-  margin-top: var(--sidebar-search-space-above)
+  margin: var(--sidebar-search-space-above) var(--sidebar-search-space-lateral) 0 var(--sidebar-search-space-lateral)
 
   position: relative
 
@@ -51,12 +51,15 @@
     background-color: var(--color-sidebar-search-icon)
     mask-image: var(--icon-search)
 
+.sidebar-search-container
+  border-radius: var(--sidebar-search-border-radius)
+
 .sidebar-search
   box-sizing: border-box
 
   border: none
-  border-top: 1px solid var(--color-sidebar-search-border)
-  border-bottom: 1px solid var(--color-sidebar-search-border)
+  border: 1px solid var(--color-sidebar-search-border)
+  border-radius: var(--sidebar-search-border-radius)
 
   padding-top: var(--sidebar-search-input-spacing-vertical)
   padding-bottom: var(--sidebar-search-input-spacing-vertical)
@@ -94,6 +97,8 @@
   font-size: var(--sidebar-item-font-size)
   margin-top: var(--sidebar-tree-space-above)
   margin-bottom: var(--sidebar-item-spacing-vertical)
+  margin-left: var(--sidebar-tree-space-horizontal)
+  margin-right: var(--sidebar-tree-space-horizontal)
 
   ul
     padding: 0
@@ -118,6 +123,7 @@
   .reference
     box-sizing: border-box
     color: var(--color-sidebar-link-text)
+    border-radius: var(--sidebar-item-border-radius)
 
     // Fill the parent.
     display: inline-block
@@ -131,6 +137,8 @@
     width: 100%
 
     padding: var(--sidebar-item-spacing-vertical) var(--sidebar-item-spacing-horizontal)
+
+    transition: 0.2s background ease, 0.2s color ease
 
     &:hover
       background: var(--color-sidebar-item-background--hover)
@@ -160,12 +168,16 @@
     justify-content: center
     align-items: center
 
+    border-top-right-radius: var(--sidebar-item-border-radius)
+    border-bottom-right-radius: var(--sidebar-item-border-radius)
+
   .caption, :not(.caption) > .caption-text
     font-size: var(--sidebar-caption-font-size)
     color: var(--color-sidebar-caption-text)
 
     font-weight: bold
     text-transform: uppercase
+    letter-spacing: .08em
 
     margin: var(--sidebar-caption-space-above) 0 0 0
     padding: var(--sidebar-item-spacing-vertical) var(--sidebar-item-spacing-horizontal)
@@ -185,13 +197,16 @@
   // Color changes on hover
   label
     background: var(--color-sidebar-item-expander-background)
+    transition: 0.2s background ease
     &:hover
       background: var(--color-sidebar-item-expander-background--hover)
 
-  .current > .reference
+  a.current.reference
     background: var(--color-sidebar-item-background--current)
-    &:hover
-      background: var(--color-sidebar-item-background--hover)
+
+  .reference:hover
+    background: var(--color-sidebar-item-background--hover)
+    color: var(--color-sidebar-item-current--hover)
 
 .toctree-checkbox
   position: absolute
