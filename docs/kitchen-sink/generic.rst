@@ -62,7 +62,7 @@ GUI labels should not run over line height.
 Keys / Menu labels
 ^^^^^^^^^^^^^^^^^^
 
-Key-bindings indicate that the read is to press a button on the keyboard or
+Key-bindings indicate that the reader is to press a button on the keyboard or
 mouse, for example :kbd:`MMB`, :kbd:`⌘+⇧+M` and :kbd:`Shift-MMB`. Another
 useful way is ``menuselection`` to show menus:
 :menuselection:`My --> Software --> Some menu --> Some sub menu 1 --> Some sub menu 2 --> Some sub menu 3`
@@ -73,7 +73,7 @@ single line.
 Long inline code wrapping
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. DO NOT RE-WRAP THE FOLLOWING PARAGRAPH!
+.. DO NOT RE-WRAP THE FOLLOWING PARAGRAPHS!
 
 Let's test wrapping and whitespace significance in inline literals:
 ``This is an example of --inline-literal --text, --including some--
@@ -81,6 +81,10 @@ strangely--hyphenated-words.  Adjust-the-width-of-your-browser-window
 to see how the text is wrapped.  -- ---- --------  Now note    the
 spacing    between the    words of    this sentence    (words
 should    be grouped    in pairs).``
+
+A very long "word": ``LoremipsumdolorsitametconsetetursadipscingelitrseddiamnonumyeirmodtemporinviduntutlaboreetdoloremagnaaliquyameratseddiamvoluptuaAtveroeosetaccusametjustoduodoloresetearebum``
+
+A very long path: ``/my/network/directory/where/all/my/fancy/files/reside/but/I/tend/to/hide/them/in/very/long/subdirectories/to/keep/them/very/hard/to/find/even/for/myself.exe``
 
 Math
 ====

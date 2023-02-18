@@ -1,6 +1,6 @@
 """A clean customisable Sphinx documentation theme."""
 
-__version__ = "2022.09.15.dev1"
+__version__ = "2022.12.07.dev1"
 
 import hashlib
 import logging
@@ -331,7 +331,7 @@ def _get_dark_style(app: sphinx.application.Sphinx) -> Style:
         ):
             dark_style = app.config._raw_config["pygments_dark_style"]
     except (AttributeError, KeyError) as e:
-        logger.warn(
+        logger.warning(
             (
                 "Furo could not determine the value of `pygments_dark_style`. "
                 "Falling back to using the value provided by Sphinx.\n"
@@ -391,7 +391,7 @@ def _overwrite_pygments_css(
         return
 
     assert app.builder
-    with open(os.path.join(app.builder.outdir, "_static", "pygments.css"), "w") as f:
+    with open(os.path.join(app.builder.outdir, "_static", "pygments.css"), "w", encoding='utf-8') as f:
         f.write(get_pygments_stylesheet())
 
 
