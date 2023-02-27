@@ -53,4 +53,4 @@ Go to [Sphinx-Gallery documentation](https://sphinx-gallery.github.io/stable/syn
 * Replace `<PROJECT>` and `<PROJECT_LOW>` with the name of the project, e.g. Gymnasiun would replace `<PROJECT>` with `Gymnasium` and `<PROJECT_LOW>` with `gymnasium`. You will find these placeholders inside files and in file names without the angle brackets.
 * Replace the images and svg files inside `_static/img` with the ones corresponding to the project.
 * Add content to the documentation.
-* Add GitHub Actions workflows to build the website. Go [HERE](./README.md#versioning) for more information.
+* Add GitHub Actions workflows to build the website. Go [here](./README.md#workflow-to-build-docs) for more information.
