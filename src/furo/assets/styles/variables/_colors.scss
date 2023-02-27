@@ -28,17 +28,16 @@
 
   // Brand colors
   --color-brand-primary: #0f4a65;
-  --color-brand-content: #2a5adf;
-  --color-brand-secondary: #7b603b;
+  --color-brand-content: #2a6cdf;
+  --color-brand-secondary: #624d2e;
   --color-brand-secondary-transparent: rgba(217, 180, 129, 0.2);
 
   // API documentation
   --color-api-background: #f8f8fb;
   --color-api-background-hover: var(--color-api-background);
-  --color-sidebar-item-current--hover: var(--color-brand-secondary)
   --color-api-overall: var(--color-foreground-secondary);
-  --color-api-name: var(--color-problematic);
-  --color-api-pre-name: var(--color-problematic);
+  --color-api-name: var(--color-brand-secondary);
+  --color-api-pre-name: var(--color-brand-secondary);
   --color-api-paren: var(--color-foreground-secondary);
   --color-api-keyword: var(--color-foreground-primary);
   --color-highlight-on-target: #ffffcc;
@@ -82,7 +81,7 @@
   // Sidebar (left)
   --color-sidebar-background: var(--color-background-secondary);
   --color-sidebar-background-border: var(--color-background-border);
-
+  --color-sidebar-item-current--hover: var(--color-brand-secondary)
   --color-sidebar-brand-text: var(--color-foreground-primary);
   --color-sidebar-caption-text: var(--color-foreground-primary);
   --color-sidebar-link-text: var(--color-foreground-secondary);
@@ -150,7 +149,7 @@
 
   // Brand colors
   --color-brand-primary: #0f4a65;
-  --color-brand-content: #416ce2;
+  --color-brand-content: #419fe2;
   --color-brand-secondary: #d3aa71;
 
   // Highlighted text (search)
