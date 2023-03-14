@@ -39,7 +39,8 @@ For most cases environments should be documented using a docstring inside the en
 
 We use Sphinx-Gallery to build the tutorials inside the docs/tutorials directory.
 
-To convert Jupyter Notebooks to Python tutorials you can use [this script](https://gist.github.com/mgoulao/f07f5f79f6cd9a721db8a34bba0a19a7).
+To convert Jupyter Notebooks to Python tutorials you can use [this script](./starter_kit/_scripts/ipynb_to_gallery.py).
+To convert cells outputting static images, like `<img src="../_static/img/tutorials/my_image.png" alt="My image description">`, they need to be in single Mardown cell and have an `alt` text.
 
 If you want Sphinx-Gallery to execute the tutorial (which adds outputs and plots) then the file name should start with run_. Note that this adds to the build time so make sure the script doesn't take more than a few seconds to execute.
 
