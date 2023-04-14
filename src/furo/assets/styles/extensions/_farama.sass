@@ -516,6 +516,31 @@ body[data-theme="light"]
     color: var(--color-brand-secondary)
     border-color: var(--color-brand-secondary)
 
+// Sphinx Jupyter
+
+div.jupyter_container
+    background: var(--color-api-background)
+    border: none
+    box-shadow: none
+
+    div.code_cell, div.highlight
+        border: none
+        border-radius: 0
+
+    div.code_cell pre
+        padding: 0.625rem 0.875rem
+
+@media (prefers-color-scheme: dark)
+    body:not([data-theme="light"]) div.jupyter_container div.highlight
+        background: #202020
+        color: #d0d0d0
+
+body[data-theme="dark"]
+    div.jupyter_container div.highlight
+        background: #202020
+        color: #d0d0d0
+
+
 
 
 @media (max-width: 950px)
