@@ -78,7 +78,7 @@ jobs:
         run: mv _build/404/index.html _build/404.html
 
       - name: Update 404 links
-        run: python docs/scripts/move404.py _build/404.html
+        run: python docs/_scripts/move_404.py _build/404.html
 
       - name: Remove .doctrees
         run: rm -r _build/.doctrees
@@ -140,7 +140,7 @@ jobs:
         run: mv _build/404/index.html _build/404.html
 
       - name: Update 404 links
-        run: python docs/scripts/move_404.py _build/404.html
+        run: python docs/_scripts/move_404.py _build/404.html
 
       - name: Remove .doctrees
         run: rm -r _build/.doctrees
@@ -185,7 +185,7 @@ jobs:
         run: pip install mujoco && pip install .[atari,accept-rom-license,box2d]
 
       - name: Build Envs Docs
-        run: python docs/scripts/gen_mds.py && python docs/scripts/gen_envs_display.py
+        run: python docs/_scripts/gen_mds.py && python docs/_scripts/gen_envs_display.py
 
       - name: Build
         run: sphinx-build -b dirhtml -v docs _build
@@ -194,7 +194,7 @@ jobs:
         run: mv _build/404/index.html _build/404.html
 
       - name: Update 404 links
-        run: python docs/scripts/move_404.py _build/404.html
+        run: python docs/_scripts/move_404.py _build/404.html
 
       - name: Remove .doctrees
         run: rm -r _build/.doctrees
@@ -258,7 +258,7 @@ jobs:
         run: pip install mujoco && pip install .[atari,accept-rom-license,box2d]
 
       - name: Build Envs Docs
-        run: python docs/scripts/gen_mds.py && python docs/scripts/gen_envs_display.py
+        run: python docs/_scripts/gen_mds.py && python docs/_scripts/gen_envs_display.py
 
       - name: Build
         run: sphinx-build -b dirhtml -v docs _build
@@ -267,7 +267,7 @@ jobs:
         run: mv _build/404/index.html _build/404.html
 
       - name: Update 404 links
-        run: python docs/scripts/move_404.py _build/404.html
+        run: python docs/_scripts/move_404.py _build/404.html
 
       - name: Remove .doctrees
         run: rm -r _build/.doctrees
