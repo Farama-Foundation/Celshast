@@ -316,11 +316,11 @@ html_theme_options = {
 To enable the edit page button, which redirects the user to the source code of the page (i.e. markdown file), add the following context dictionary to the `conf.py` script.
 
 ``` python
-html_context: Dict[str, Any] = {}
-html_context["conf_py_path"] = "/docs/"
-html_context["github_user"] = "Farama-Foundation"
-html_context["github_repo"] = "Project Name"
-html_context["github_version"] = "main" # (in some cases master)
+html_theme_options = {
+    "source_repository": "https://github.com/Farama-Foundation/<PROJECT>/",
+    "source_branch": "main",
+    "source_directory": "docs/",
+}
 ```
 
 ### Other Theme options

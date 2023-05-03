@@ -234,6 +234,7 @@
 
     {# Get Farama projects and fill menu #}
     <script>
+      // Create menu with Farama projects by using the API at farama.org/api/projects.json
       const createCORSRequest = (method, url) => {
         let xhr = new XMLHttpRequest();
         xhr.responseType = 'json';
@@ -346,11 +347,11 @@
     </script>
 
     {# Versioning Menu #}
-    {% if theme_versioning == True -%}
+    {% if theme_versioning == True and theme_source_repository -%}
     <script>
       const versioningConfig = {
-        githubUser: '{{ github_user }}',
-        githubRepo: '{{ github_repo }}',
+        githubUser: '{{ theme_source_repository.rstrip("/").split("/")[-2] }}',
+        githubRepo: '{{ theme_source_repository.rstrip("/").split("/")[-1] }}',
       };
       fetch('/main/_static/versioning/versioning_menu.html').then(response => {
         if (response.status === 200) {

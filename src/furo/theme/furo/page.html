@@ -221,8 +221,8 @@
                 </a>
                 {%- endif -%}
                 {#- Show GitHub repository home -#}
-                {%- if display_github and github_user != "None" and github_repo != "None" -%}
-                <a class="muted-link" href="https://github.com/{{ github_user }}/{{ github_repo }}"
+                {%- if theme_source_repository -%}
+                <a class="muted-link" href="{{ theme_source_repository }}"
                   aria-label="On GitHub">
                   <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
