@@ -4,7 +4,13 @@ firstpage:
 lastpage:
 ---
 
-# <PROJECT>
+```{project-logo} _static/<PROJECT>-text.png
+:alt: <PROJECT> Logo
+```
+
+```{project-heading}
+Description of the Project
+```
 
 ```{figure} _static/REPLACE_ME.gif
    :alt: REPLACE ME

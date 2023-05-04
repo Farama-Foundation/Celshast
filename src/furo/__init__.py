@@ -20,6 +20,7 @@ from sphinx.highlighting import PygmentsBridge
 from sphinx.transforms.post_transforms import SphinxPostTransform
 
 from .navigation import get_navigation_tree
+from .farama_directives import FaramaProjectLogoDirective, FaramaProjectHeadingDirective
 
 THEME_PATH = (Path(__file__).parent / "theme" / "furo").resolve()
 
@@ -246,6 +247,10 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
 
     # 500 is the default priority for extensions, we want this after this.
     app.add_css_file("styles/furo-extensions.css", priority=600)
+
+    # Add custom directives
+    app.add_directive("project-logo", FaramaProjectLogoDirective)
+    app.add_directive("project-heading", FaramaProjectHeadingDirective)
 
     builder = app.builder
     assert builder, "what?"

@@ -2,9 +2,15 @@
 hide-toc: true
 ---
 
-# Furo
+# Celshast, a Furo fork
 
+```{project-logo} _static/gymnasium-text.png
+:alt: Gymnasium Logo
+```
+
+```{project-heading}
 A clean customisable Sphinx documentation theme.
+```
 
 ```{include} ../README.md
 :start-after: <!-- start elevator-pitch -->

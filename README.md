@@ -334,6 +334,30 @@ html_theme_options = {
 }
 ```
 
+## Custom Directives
+
+We provided a set of custom directives that enable us to keep a standard style across the different projects.
+
+### Project Logo
+
+This is usually used on the index page of the documentation.
+
+````
+```{project-logo} _static/gymnasium-text.png
+:alt: Gymnasium Logo
+```
+````
+
+### Project Heading
+
+This is usually used on the index page of the documentation after the project logo.
+
+````
+```{project-heading}
+A clean customisable Sphinx documentation theme.
+```
+````
+
 ## Frontmatter
 
 ### Disable Previous page and/or Next page buttons
