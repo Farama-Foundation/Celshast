@@ -48,6 +48,9 @@ article
   color: var(--color-content-foreground)
   background: var(--color-content-background)
 
+.article-container
+  position: relative
+
 .page
   display: flex
   // fill the viewport for pages with little content.
@@ -229,7 +232,8 @@ article
   width: 1.3rem
 
 .content-icon-container
-  float: right
+  position: absolute
+  right: 0
   display: flex
   margin-top: 1.5rem
   margin-left: 1rem
