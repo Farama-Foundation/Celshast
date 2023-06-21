@@ -50,6 +50,8 @@ html_theme_options = {
 Typos in the `*_css_variables` dictionary are silently ignored, and do not raise any errors or warnings. Double check that your spellings and values are correct and valid.
 ```
 
+(sidebar_hide_name)=
+
 ### `sidebar_hide_name`
 
 Controls whether you see the project's name in the sidebar of the documentation. This is useful when you only want to show your documentation's logo in the sidebar. The default is `False`.
@@ -100,7 +102,7 @@ The “Contents” sidebar is automatically hidden for any pages that don’t ha
 
 ## Custom CSS files
 
-If you want more control than what is provided by the above theme options, see {any}`customisation/injecting.md#injecting-code`.
+If you want more control than what is provided by the above theme options, see {doc}`injecting`.
 
 [css-variables]: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 [sphinx-html_theme_options]: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_theme_options

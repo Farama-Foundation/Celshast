@@ -3,7 +3,7 @@ requires = ["sphinx-theme-builder >= 0.2.0a10"]
 build-backend = "sphinx_theme_builder"
 
 [tool.sphinx-theme-builder]
-node-version = "16.15.1"
+node-version = "18.16.0"
 additional-compiled-static-assets = [
   "styles/furo-extensions.css",
 ]
@@ -17,7 +17,7 @@ readme = "README.md"
 requires-python = ">=3.7"
 dependencies = [
   "beautifulsoup4",
-  "sphinx >= 5.0,<7.0",
+  "sphinx >= 6.0,<8.0",
   "sphinx-basic-ng",
   "pygments >= 2.7",
   "matplotlib",
@@ -35,11 +35,11 @@ classifiers = [
   "Environment :: Web Environment",
   "Intended Audience :: Developers",
   "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3.5",
-  "Programming Language :: Python :: 3.6",
   "Programming Language :: Python :: 3.7",
   "Programming Language :: Python :: 3.8",
   "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
   "Operating System :: OS Independent",
   "Topic :: Documentation",
   "Topic :: Software Development :: Documentation",
