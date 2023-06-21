@@ -4,6 +4,20 @@ A [Farama Foundation](https://farama.org/) <a href="https://www.sphinx-doc.org/"
 
 To learn how to contribute to our projects' documentation go to [CONTRIBUTING.md](CONTRIBUTING.md)
 
+## Install Celshast
+
+```
+git clone https://github.com/Farama-Foundation/Celshast.git
+cd Celshast
+pip install -e .
+```
+
+**Add to documentation (conf.py)**
+
+```
+html_theme = "furo"
+```
+
 ## Build Documentation
 
 To build and serve the documentation website you should go to the `docs/` directory and choose one of the following options.
