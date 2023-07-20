@@ -90,6 +90,7 @@ html_theme_options: Dict[str, Any] = {
             "class": "",
         },
     ],
+    "gtag": "G-XXXXXXXXX",
     "source_repository": "https://github.com/pradyunsg/furo/",
     "source_branch": "main",
     "source_directory": "docs/",

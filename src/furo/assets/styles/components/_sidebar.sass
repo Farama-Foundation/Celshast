@@ -33,10 +33,10 @@
   display: flex
   align-items: center
   margin: var(--sidebar-search-space-above) var(--sidebar-search-space-lateral) 0 var(--sidebar-search-space-lateral)
-
   position: relative
-
   background: var(--color-sidebar-search-background)
+  transition: 0.2s background ease
+
   &:hover,
   &:focus-within
     background: var(--color-sidebar-search-background--focus)
@@ -49,6 +49,7 @@
     height: var(--sidebar-search-icon-size)
 
     background-color: var(--color-sidebar-search-icon)
+    -webkit-mask-image: var(--icon-search)
     mask-image: var(--icon-search)
 
 .sidebar-search-container

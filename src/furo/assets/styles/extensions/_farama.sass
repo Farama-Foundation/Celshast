@@ -40,22 +40,24 @@ html:has(.farama-header-menu.active)
     max-width: calc(100% - 28px)
     margin: auto
 
+.cookie-alert__button
+    margin-left: 14px
+
 .cookie-alert p
     flex: 1
 
-.cookie-alert button
-    background-color: transparent
+// Farama default button style
+
+.farama-btn
+    background: var(--color-farama-button-background)
+    padding: 10px 26px
+    border-radius: 6px
     border: none
-    width: 26px
-    height: 26px
-    padding: 0
+    transition: background-color 0.2s ease
     cursor: pointer
 
-.cookie-alert button svg .cls-1
-    stroke: var(--color-foreground-primary)
-
-.cookie-alert button svg
-    width: 100%
+    &:hover
+        background: var(--color-farama-button-background-hover)
 
 // Env Icons
 
@@ -310,15 +312,32 @@ body
                     flex-wrap: wrap
 
                     .farama-header-menu__section
-                        min-width: 250px
+                        min-width: 230px
                         margin-bottom: 24px
+                        padding-left: 18px
 
                         .farama-header-menu__section-title
                             display: block
-                            font-size: var(--font-size--normal)
-                            font-weight: bold
+                            font-size: var(--font-size--small)
+                            font-weight: 600
                             text-transform: uppercase
-                            margin-bottom: 12px
+                            padding: 0 12px 12px
+
+                        .farama-header-menu__subsections-container
+
+                            .farama-header-menu__subsection
+                                min-width: 230px
+
+                                &:not(:last-child)
+                                    margin-right: 12px
+
+                                .farama-header-menu__subsection-title
+                                    display: block
+                                    font-size: var(--font-size--small--3)
+                                    color: var(--color-foreground-secondary)
+                                    font-weight: 700
+                                    text-transform: uppercase
+                                    padding: 20px 12px 10px
 
                         .farama-header-menu-list
                             display: inherit
@@ -330,18 +349,18 @@ body
                                 border-radius: var(--sidebar-item-border-radius)
 
                                 &:hover
-                                    background-color: var(--color-background-hover)
+                                    background-color: var(--color-farama-header-background-hover)
 
                                 a
                                     display: flex
-                                    padding: 12px 18px
+                                    padding: 12px 14px
                                     align-items: center
 
                                     &:hover
                                         color: inherit
 
                                     img
-                                        width: 24px
+                                        width: 26px
                                         margin-right: 10px
 
 .farama-sidebar__title
@@ -665,12 +684,19 @@ body[data-theme="dark"]
         .farama-white-logo-invert
             filter: invert(1)
 
+    body[data-theme="dark"]
+        .farama-black-logo-invert
+            filter: invert(1)
+
 
 @media (prefers-color-scheme: dark)
     body:not([data-theme="light"])
         // Github math render
         img[src*="//render.githubusercontent.com/render/math"]
             filter: invert(90%)
+
+        .farama-black-logo-invert
+            filter: invert(1)
 
     body[data-theme="light"]
         .farama-white-logo-invert

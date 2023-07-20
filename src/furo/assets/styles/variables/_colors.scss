@@ -104,8 +104,8 @@
   );
 
   --color-sidebar-search-text: var(--color-foreground-primary);
-  --color-sidebar-search-background: var(--color-background-secondary);
-  --color-sidebar-search-background--focus: var(--color-background-primary);
+  --color-sidebar-search-background: var(--color-background-border);
+  --color-sidebar-search-background--focus: var(--color-background-hover--transparent);
   --color-sidebar-search-border: var(--color-background-border);
   --color-sidebar-search-icon: var(--color-foreground-muted);
 
@@ -125,6 +125,13 @@
   --color-link--hover: var(--color-brand-content);
   --color-link-underline: var(--color-background-border);
   --color-link-underline--hover: var(--color-foreground-border);
+
+  // Farama
+  --color-farama-header-background-hover: rgba(0, 0, 0, 0.05);
+
+  --color-farama-button-background: rgb(0 0 0 / 10%);
+  --color-farama-button-background-hover: rgb(0 0 0 / 20%);
+
 }
 
 @mixin colors-dark {
@@ -173,4 +180,10 @@
 
   // API
   --color-api-background: #202020;
+
+  // Farama
+  --color-farama-header-background-hover: rgba(255, 255, 255, 0.1);
+
+  --color-farama-button-background: rgb(255 255 255 / 10%);
+  --color-farama-button-background-hover: rgb(255 255 255 / 20%);
 }
