@@ -369,7 +369,7 @@
             const subSectionContainerElem = Object.assign(
                 document.createElement('div'), {
                   className:'farama-header-menu__subsections-container',
-                  style: key == "Mature Projects" ? "display: flex" : ""
+                  style: 'display: flex'
                 }
             )
             Object.keys(subSections).forEach((subKey, i) => {
@@ -384,7 +384,7 @@
                   innerText: subKey
                 }
               ))
-              const ulElem = createProjectsList(subSections[subKey], key !== "Foundation");
+              const ulElem = createProjectsList(subSections[subKey], key !== 'Foundation');
               subSectionElem.appendChild(ulElem);
               subSectionContainerElem.appendChild(subSectionElem);
             })
