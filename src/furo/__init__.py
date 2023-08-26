@@ -176,7 +176,7 @@ def _html_page_context(
     doctree: Any,
 ) -> None:
     if "css_files" in context:
-        if "_static/styles/furo.css" not in [c.filename for c in context["css_files"]]:
+        if "_static/styles/furo.css" not in [c.filename.split("?")[0] for c in context["css_files"]]:
             raise ConfigError(
                 "This documentation is not using `furo.css` as the stylesheet. "
                 "If you have set `html_style` in your conf.py file, remove it."
