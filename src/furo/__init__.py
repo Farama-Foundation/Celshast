@@ -244,6 +244,10 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
             "This should not happen."
         )
 
+    # Add default MyST extensions
+    if "myst_enable_extensions" in app.config:
+        app.config.myst_enable_extensions.add("dollarmath")
+
     # Our JS file needs to be loaded as soon as possible.
     app.add_js_file("scripts/furo.js", priority=200)
 
