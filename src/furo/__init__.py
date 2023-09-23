@@ -176,7 +176,9 @@ def _html_page_context(
     doctree: Any,
 ) -> None:
     if "css_files" in context:
-        if "_static/styles/furo.css" not in [c.filename.split("?")[0] for c in context["css_files"]]:
+        if "_static/styles/furo.css" not in [
+            c.filename.split("?")[0] for c in context["css_files"]
+        ]:
             raise ConfigError(
                 "This documentation is not using `furo.css` as the stylesheet. "
                 "If you have set `html_style` in your conf.py file, remove it."
@@ -226,7 +228,6 @@ def _html_page_context(
     context["farama_projects_api"] = "https://farama.org/api/projects.json"
 
 
-
 def _builder_inited(app: sphinx.application.Sphinx) -> None:
     if "furo" in app.config.extensions:
         raise ConfigError(
@@ -246,7 +247,14 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
 
     # Add default MyST extensions
     if "myst_enable_extensions" in app.config:
-        app.config.myst_enable_extensions.add("dollarmath")
+        if isinstance(app.config.myst_enable_extensions, list):
+            app.config.myst_enable_extensions.append("dollarmath")
+        elif isinstance(app.config.myst_enable_extensions, set):
+            app.config.myst_enable_extensions.add("dollarmath")
+        else:
+            raise ConfigError(
+                "myst_enable_extensions should be a list or set of strings."
+            )
 
     # Our JS file needs to be loaded as soon as possible.
     app.add_js_file("scripts/furo.js", priority=200)
