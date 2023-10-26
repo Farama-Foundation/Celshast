@@ -188,10 +188,6 @@ jobs:
         with:
             python-version: '3.9'
 
-      - name: Get tag
-        id: tag
-        uses: dawidd6/action-get-tag@v1
-
       - name: Install docs dependencies
         run: pip install -r docs/requirements.txt
 
@@ -217,11 +213,12 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: _build
-          target-folder: ${{steps.tag.outputs.tag}}
+          target-folder: ${{github.ref_name}}
           clean: false
 
       - name: Upload to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
+        if: ${{ !contains(github.ref_name, 'a') }}
         with:
           folder: _build
           clean-exclude: |
@@ -229,7 +226,7 @@ jobs:
             main
 ```
 
-* `manual-build-docs-version.yml` - Build a certain version of the documentation website based on a certain commit. The build will be published in the root folder (if the option latest is enabled) and a folder named after the version (e.g. 1.0.3) at the `gh-pages` branch.
+* `build-manual-docs-version.yml` - Build a certain version of the documentation website based on a certain commit. The build will be published in the root folder (if the option latest is enabled) and a folder named after the version (e.g. 1.0.3) at the `gh-pages` branch.
 
 ``` yaml
 name: Manual Docs Versioning
@@ -250,7 +247,7 @@ permissions:
   contents: write
 jobs:
   docs:
-    name: Generate Website for new version
+    name: Generate Website for the new version
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
