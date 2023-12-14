@@ -245,17 +245,6 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
             "This should not happen."
         )
 
-    # Add default MyST extensions
-    if "myst_enable_extensions" in app.config:
-        if isinstance(app.config.myst_enable_extensions, list):
-            app.config.myst_enable_extensions.append("dollarmath")
-        elif isinstance(app.config.myst_enable_extensions, set):
-            app.config.myst_enable_extensions.add("dollarmath")
-        else:
-            raise ConfigError(
-                "myst_enable_extensions should be a list or set of strings."
-            )
-
     # Our JS file needs to be loaded as soon as possible.
     app.add_js_file("scripts/furo.js", priority=200)
 
@@ -361,6 +350,17 @@ def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
     app.add_config_value(
         "pygments_dark_style", default="native", rebuild="env", types=[str]
     )
+
+    # Add default MyST extensions
+    if "myst_enable_extensions" in app.config:
+        if isinstance(app.config.myst_enable_extensions, list):
+            app.config.myst_enable_extensions.append("dollarmath")
+        elif isinstance(app.config.myst_enable_extensions, set):
+            app.config.myst_enable_extensions.add("dollarmath")
+        else:
+            raise ConfigError(
+                "myst_enable_extensions should be a list or set of strings."
+            )
 
     app.add_html_theme("furo", str(THEME_PATH))
 
