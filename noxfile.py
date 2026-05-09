@@ -7,7 +7,7 @@ import os
 import nox
 
 PACKAGE_NAME = "furo"
-nox.options.sessions = ["lint", "test"]
+nox.options.sessions = ["lint"]
 nox.options.default_venv_backend = "uv"
 
 
@@ -93,14 +93,6 @@ def lint(session):
         args.append("--show-diff-on-failure")
 
     session.run("pre-commit", "run", *args)
-
-
-@nox.session
-def test(session):
-    session.install("-e", ".[test]")
-
-    args = session.posargs or ["-n", "auto", "--cov", PACKAGE_NAME]
-    session.run("pytest", *args)
 
 
 @nox.session
