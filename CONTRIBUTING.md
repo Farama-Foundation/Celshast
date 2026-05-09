@@ -42,16 +42,16 @@ We use Sphinx-Gallery to build the tutorials inside the docs/tutorials directory
 To convert Jupyter Notebooks to Python tutorials you can use [this script](./starter_kit/_scripts/ipynb_to_gallery.py).
 To convert cells outputting static images, like `<img src="../_static/img/tutorials/my_image.png" alt="My image description">`, they need to be in single Mardown cell and have an `alt` text.
 
-If you want Sphinx-Gallery to execute the tutorial (which adds outputs and plots) then the file name should start with run_. Note that this adds to the build time so make sure the script doesn't take more than a few seconds to execute.
+If you want Sphinx-Gallery to execute the tutorial (which adds outputs and plots) then the file name should start with run\_. Note that this adds to the build time so make sure the script doesn't take more than a few seconds to execute.
 
 Go to [Sphinx-Gallery documentation](https://sphinx-gallery.github.io/stable/syntax.html) for more information.
 
 ## Create a Documentation website
 
-* Create a directory named `docs` in the root directory of the project's repository
-* **Copy** the contents inside the [start_kit](./starter_kit/) directory (you can use [donwload-directory.github.io](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2FFarama-Foundation%2FCelshast%2Ftree%2Fmain%2Fstarter_kit))
-* **Paste** them inside the new `docs` directory
-* Replace `<PROJECT>` and `<PROJECT_LOW>` with the name of the project, e.g. Gymnasiun would replace `<PROJECT>` with `Gymnasium` and `<PROJECT_LOW>` with `gymnasium`. You will find these placeholders inside files and in file names without the angle brackets.
-* Replace the images and svg files inside `_static/img` with the ones corresponding to the project.
-* Add content to the documentation.
-* Add GitHub Actions workflows to build the website. Go [here](./README.md#workflow-to-build-docs) for more information.
+- Create a directory named `docs` in the root directory of the project's repository
+- **Copy** the contents inside the [start_kit](./starter_kit/) directory (you can use [donwload-directory.github.io](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2FFarama-Foundation%2FCelshast%2Ftree%2Fmain%2Fstarter_kit))
+- **Paste** them inside the new `docs` directory
+- Replace `<PROJECT>` and `<PROJECT_LOW>` with the name of the project, e.g. Gymnasiun would replace `<PROJECT>` with `Gymnasium` and `<PROJECT_LOW>` with `gymnasium`. You will find these placeholders inside files and in file names without the angle brackets.
+- Replace the images and svg files inside `_static/img` with the ones corresponding to the project.
+- Add content to the documentation.
+- Add GitHub Actions workflows to build the website. Go [here](./README.md#workflow-to-build-docs) for more information.

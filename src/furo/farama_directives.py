@@ -1,10 +1,9 @@
-"""Sphinx Extensions used by Farama's projects.
-"""
+"""Sphinx Extensions used by Farama's projects."""
 
 from docutils import nodes
-from docutils.statemachine import StringList
-from docutils.parsers.rst.directives import images
 from docutils.parsers.rst import Directive, directives
+from docutils.parsers.rst.directives import images
+from docutils.statemachine import StringList
 
 
 class FaramaProjectLogoDirective(images.Figure):

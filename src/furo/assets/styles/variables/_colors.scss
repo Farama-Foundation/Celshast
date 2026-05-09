@@ -82,7 +82,7 @@
   --color-sidebar-background: var(--color-background-secondary);
   --color-sidebar-background-border: var(--color-background-border);
   --color-sidebar-item-current--hover: var(--color-brand-secondary)
-  --color-sidebar-brand-text: var(--color-foreground-primary);
+    --color-sidebar-brand-text: var(--color-foreground-primary);
   --color-sidebar-caption-text: var(--color-foreground-primary);
   --color-sidebar-link-text: var(--color-foreground-secondary);
   --color-sidebar-link-text--top-level: var(--color-foreground-primary);
@@ -96,7 +96,9 @@
   //   var(--color-background-hover) 100%
   // );
   // --color-sidebar-item-background--hover: var(--color-background-hover);
-  --color-sidebar-item-background--hover: var(--color-brand-secondary-transparent);
+  --color-sidebar-item-background--hover: var(
+    --color-brand-secondary-transparent
+  );
 
   --color-sidebar-item-expander-background: transparent;
   --color-sidebar-item-expander-background--hover: var(
@@ -105,7 +107,9 @@
 
   --color-sidebar-search-text: var(--color-foreground-primary);
   --color-sidebar-search-background: var(--color-background-border);
-  --color-sidebar-search-background--focus: var(--color-background-hover--transparent);
+  --color-sidebar-search-background--focus: var(
+    --color-background-hover--transparent
+  );
   --color-sidebar-search-border: var(--color-background-border);
   --color-sidebar-search-icon: var(--color-foreground-muted);
 
@@ -131,7 +135,6 @@
 
   --color-farama-button-background: rgb(0 0 0 / 10%);
   --color-farama-button-background-hover: rgb(0 0 0 / 20%);
-
 }
 
 @mixin colors-dark {

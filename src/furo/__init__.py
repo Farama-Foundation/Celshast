@@ -20,8 +20,8 @@ from sphinx.errors import ConfigError
 from sphinx.highlighting import PygmentsBridge
 from sphinx.transforms.post_transforms import SphinxPostTransform
 
+from .farama_directives import FaramaProjectHeadingDirective, FaramaProjectLogoDirective
 from .navigation import get_navigation_tree
-from .farama_directives import FaramaProjectLogoDirective, FaramaProjectHeadingDirective
 
 THEME_PATH = (Path(__file__).parent / "theme" / "furo").resolve()
 
