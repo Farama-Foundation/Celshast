@@ -1,4 +1,5 @@
 [tools]
 python = "3.12"
 node = "18.17.1"
-uv = "latest"
+uv = "0.11.8"
+just = "1.50.0"
