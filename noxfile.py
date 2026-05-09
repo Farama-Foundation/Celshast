@@ -8,6 +8,7 @@ import nox
 
 PACKAGE_NAME = "furo"
 nox.options.sessions = ["lint", "test"]
+nox.options.default_venv_backend = "uv"
 
 
 #

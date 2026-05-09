@@ -454,17 +454,14 @@ sphinx_gallery_conf = {
 
 ## Building Theme from source
 
-To contribute to the theme you will need to build it. To do that install `nox` using `pip`.
+To contribute to the theme you will need to build it. The toolchain (Python, Node, uv) is pinned in `mise.toml`; install [mise](https://mise.jdx.dev/) and run `mise install` from the repo root to provision matching versions. Then run `nox` via `uvx`:
 
 ```
-pip install nox
+mise install
+uvx nox -s docs-live
 ```
 
-And build the testing documentation using the following command.
-
-```
-nox -s docs-live
-```
+Nox uses `uv` as its venv backend (configured in `noxfile.py`), so session installs are fast. Available sessions: `docs`, `docs-live`, `lint`, `test`, `release`.
 
 
 ## License
