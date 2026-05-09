@@ -454,14 +454,27 @@ sphinx_gallery_conf = {
 
 ## Building Theme from source
 
-To contribute to the theme you will need to build it. The toolchain (Python, Node, uv) is pinned in `mise.toml`; install [mise](https://mise.jdx.dev/) and run `mise install` from the repo root to provision matching versions. Then run `nox` via `uvx`:
+To contribute to the theme you will need to build it. The toolchain (Python, Node, `uv`, `just`) is pinned in `mise.toml`; install [mise](https://mise.jdx.dev/) and run `mise install` from the repo root to provision matching versions.
 
 ```
 mise install
-uvx nox -s docs-live
+just serve
 ```
 
-Nox uses `uv` as its venv backend (configured in `noxfile.py`), so session installs are fast. Available sessions: `docs`, `docs-live`, `lint`, `test`, `release`.
+`just serve` runs the live-reload docs server bound to `0.0.0.0:8000` so the site is reachable from another device on your LAN (e.g. a phone). To use a different host or port:
+
+```
+just serve 127.0.0.1 9000
+```
+
+Other recipes in the `Justfile`:
+
+- `just build` — build the docs into `build/docs` once (no live-reload).
+- `just lint` — run the pre-commit linters (ruff, prettier, mypy, …).
+
+Each recipe is a thin wrapper around `uvx nox -s <session>`. Nox uses `uv` as its venv backend (configured in `noxfile.py`), so session installs are fast. Available sessions: `docs`, `docs-live`, `lint`, `release`.
+
+For a fuller walkthrough of the contributor workflow — initial setup, linting, the dev server, the release process — see `docs/contributing/workflow.md` (or run `just serve` and browse to it).
 
 
 ## License
