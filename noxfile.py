@@ -1,5 +1,5 @@
-"""Development automation
-"""
+"""Development automation"""
+
 import datetime
 import glob
 import os
@@ -7,7 +7,8 @@ import os
 import nox
 
 PACKAGE_NAME = "furo"
-nox.options.sessions = ["lint", "test"]
+nox.options.sessions = ["lint"]
+nox.options.default_venv_backend = "uv"
 
 
 #
@@ -95,14 +96,6 @@ def lint(session):
 
 
 @nox.session
-def test(session):
-    session.install("-e", ".[test]")
-
-    args = session.posargs or ["-n", "auto", "--cov", PACKAGE_NAME]
-    session.run("pytest", *args)
-
-
-@nox.session
 def release(session):
     version_file = f"src/{PACKAGE_NAME}/__init__.py"
     allowed_upstreams = [
@@ -143,7 +136,12 @@ def release(session):
     # Tag the commit
     session.run(
         # fmt: off
-        "git", "tag", release_version, "-m", f"Release {release_version}", "-s",
+        "git",
+        "tag",
+        release_version,
+        "-m",
+        f"Release {release_version}",
+        "-s",
         external=True,
         # fmt: on
     )

@@ -16,10 +16,9 @@
 
 # -- Project information -----------------------------------------------------
 import os
-from typing import Any, Dict
 
 # TODO: Replace <PROJECT>, remove comment and remove this line
-#import <PROJECT>
+# import <PROJECT>
 
 
 project = "<PROJECT>"

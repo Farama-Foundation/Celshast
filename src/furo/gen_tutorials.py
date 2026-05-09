@@ -1,7 +1,7 @@
+import glob
 import os
 import re
-import glob
-from typing import List
+
 from sphinx_gallery import gen_rst
 from sphinx_gallery.gen_gallery import DEFAULT_GALLERY_CONF
 from sphinx_gallery.scrapers import matplotlib_scraper
@@ -25,7 +25,6 @@ def generate_tutorials(file_path: str, destination_dir_path: str):
         file_path (str): Paths or glob pattern to python files.
         destination_dir_path (str): Destination directory path.
     """
-
     # parse glob
     file_paths = glob.glob(file_path)
     if not file_paths:

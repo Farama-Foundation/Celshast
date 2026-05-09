@@ -50,3 +50,22 @@ classifiers = [
 
 [project.urls]
 GitHub = "https://github.com/pradyunsg/furo"
+
+[tool.ruff]
+line-length = 88
+target-version = "py38"
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "D"]
+ignore = ["E203", "E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"docs/**" = ["D"]
+"tests/**" = ["D"]
+"noxfile.py" = ["D"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "pep257"
+
+[tool.ruff.lint.isort]
+known-first-party = ["furo"]

@@ -25,6 +25,7 @@ To build and serve the documentation website you should go to the `docs/` direct
 **Option 1: Build once**
 
 Build:
+
 ```
 make dirhtml
 OR
@@ -32,6 +33,7 @@ sphinx-build -b dirhtml . _build
 ```
 
 Serve the generated website using python (you can choose other http servers):
+
 ```
 python -m http.server 8001 --directory _build
 ```
@@ -56,7 +58,7 @@ Our docs are hosted using GitHub Pages (using gh-pages branch) and we use a GitH
 
 The following code block shows an example of a `yaml` file usually named `.github/workflows/build-docs.yml` that defines the workflow.
 
-``` yaml
+```yaml
 name: Deploy Docs
 on:
   push:
@@ -74,7 +76,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
         with:
-            python-version: '3.9'
+          python-version: "3.9"
 
       - name: Install docs dependencies
         run: pip install -r docs/requirements.txt
@@ -109,7 +111,7 @@ Celshast supports documentation versioning using an HTML menu and GitHub Actions
 
 To enable the menu set the theme option to true in the `conf.py` file:
 
-``` python
+```python
 html_theme_options = {
     "versioning": True,
 }
@@ -117,9 +119,9 @@ html_theme_options = {
 
 With versioning enabled you should have three different GitHub Actions workflows (the names are just an example):
 
-* `build-docs-dev.yml` - Build the docs based on the latest commit in the `main` branch, which is an unstable version. The build will be published in the folder `main` at the `gh-pages` branch.
+- `build-docs-dev.yml` - Build the docs based on the latest commit in the `main` branch, which is an unstable version. The build will be published in the folder `main` at the `gh-pages` branch.
 
-``` yaml
+```yaml
 name: Build main branch documentation website
 on:
   push:
@@ -136,7 +138,7 @@ jobs:
 
       - uses: actions/setup-python@v4
         with:
-            python-version: '3.9'
+          python-version: "3.9"
 
       - name: Install dependencies
         run: pip install -r docs/requirements.txt
@@ -167,14 +169,14 @@ jobs:
           clean: false
 ```
 
-* `build-docs-version.yml` - Build the docs' latest version based on a new release (tag). The build will be published in the root folder and a folder named after the version (e.g. 1.0.3) at the `gh-pages` branch.
+- `build-docs-version.yml` - Build the docs' latest version based on a new release (tag). The build will be published in the root folder and a folder named after the version (e.g. 1.0.3) at the `gh-pages` branch.
 
-``` yaml
+```yaml
 name: Docs Versioning
 on:
   push:
     tags:
-      - 'v?*.*.*'
+      - "v?*.*.*"
 permissions:
   contents: write
 jobs:
@@ -186,7 +188,7 @@ jobs:
 
       - uses: actions/setup-python@v4
         with:
-            python-version: '3.9'
+          python-version: "3.9"
 
       - name: Install docs dependencies
         run: pip install -r docs/requirements.txt
@@ -226,22 +228,22 @@ jobs:
             main
 ```
 
-* `build-manual-docs-version.yml` - Build a certain version of the documentation website based on a certain commit. The build will be published in the root folder (if the option latest is enabled) and a folder named after the version (e.g. 1.0.3) at the `gh-pages` branch.
+- `build-manual-docs-version.yml` - Build a certain version of the documentation website based on a certain commit. The build will be published in the root folder (if the option latest is enabled) and a folder named after the version (e.g. 1.0.3) at the `gh-pages` branch.
 
-``` yaml
+```yaml
 name: Manual Docs Versioning
 on:
   workflow_dispatch:
     inputs:
       version:
-          description: 'Documentation version to create'
-          required: true
+        description: "Documentation version to create"
+        required: true
       commit:
-          description: 'Commit used to build the Documentation version'
-          required: false
+        description: "Commit used to build the Documentation version"
+        required: false
       latest:
-          description: 'Latest version'
-          type: boolean
+        description: "Latest version"
+        type: boolean
 
 permissions:
   contents: write
@@ -260,7 +262,7 @@ jobs:
 
       - uses: actions/setup-python@v4
         with:
-            python-version: '3.9'
+          python-version: "3.9"
 
       - name: Install dependencies
         run: pip install -r docs/requirements.txt
@@ -306,7 +308,7 @@ jobs:
 
 To enable Google Analytics add the following theme option in the `conf.py` file.
 
-``` python
+```python
 html_theme_options = {
     "gtag": "G-6H9C8TWXZ8",
 }
@@ -316,7 +318,7 @@ html_theme_options = {
 
 To enable the donations banner and sidebar button, add the following theme option in the `conf.py` file.
 
-``` python
+```python
 html_theme_options = {
     "donations": True,
 }
@@ -326,7 +328,7 @@ html_theme_options = {
 
 To enable the edit page button, which redirects the user to the source code of the page (i.e. markdown file), add the following context dictionary to the `conf.py` script.
 
-``` python
+```python
 html_theme_options = {
     "source_repository": "https://github.com/Farama-Foundation/<PROJECT>/",
     "source_branch": "main",
@@ -336,7 +338,7 @@ html_theme_options = {
 
 ### Other Theme options
 
-``` python
+```python
 html_theme_options = {
     "light_logo": "img/gymnasium_black.svg",
     "dark_logo": "img/gymnasium_white.svg",
@@ -375,11 +377,12 @@ A clean customisable Sphinx documentation theme.
 
 If you don't want a certain page to have the `Next` and/or `Previous` buttons at the bottom you can disable them by adding the following variables to the front matter block of the markdown file:
 
-* `firstpage:` - disables `Previous` button
+- `firstpage:` - disables `Previous` button
 
-* `lastpage:` - disables `Next` button
+- `lastpage:` - disables `Next` button
 
 For example:
+
 ```
 ---
 firstpage:
@@ -407,17 +410,15 @@ env_icon: [path to icon]
 ---
 ```
 
-
 ### Farama Top Menu
 
 The Farama Foundation top menu is built using the response of the API [farama.org/api/projects.json](https://farama.org/api/projects.json). The source code of the API can found [here](https://github.com/Farama-Foundation/farama.org/blob/main/api/projects.json) and the source code of the menu [here](https://github.com/Farama-Foundation/Celshast/blob/main/src/furo/theme/furo/base.html#L238)
 
-
 ## Tutorials
 
-We use [sphinx-gallery](https://sphinx-gallery.github.io/stable/index.html) to build the tutorials. To add `sphinx-gallery` you need to add the following code to the `conf.py` script (assuming that all tutorials are in the folder `docs/tutorials`). Don't forget to add `sphinx-gallery` to the docs requirements. 
+We use [sphinx-gallery](https://sphinx-gallery.github.io/stable/index.html) to build the tutorials. To add `sphinx-gallery` you need to add the following code to the `conf.py` script (assuming that all tutorials are in the folder `docs/tutorials`). Don't forget to add `sphinx-gallery` to the docs requirements.
 
-``` python
+```python
 extensions = [
     ...
     "sphinx_gallery.gen_gallery",
@@ -454,18 +455,14 @@ sphinx_gallery_conf = {
 
 ## Building Theme from source
 
-To contribute to the theme you will need to build it. To do that install `nox` using `pip`.
+To contribute to the theme you will need to build it. The toolchain (Python, Node, uv) is pinned in `mise.toml`; install [mise](https://mise.jdx.dev/) and run `mise install` from the repo root to provision matching versions. Then run `nox` via `uvx`:
 
 ```
-pip install nox
+mise install
+uvx nox -s docs-live
 ```
 
-And build the testing documentation using the following command.
-
-```
-nox -s docs-live
-```
-
+Nox uses `uv` as its venv backend (configured in `noxfile.py`), so session installs are fast. Available sessions: `docs`, `docs-live`, `lint`, `test`, `release`.
 
 ## License
 
