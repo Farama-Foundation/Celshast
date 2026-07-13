@@ -7,6 +7,12 @@ To learn how to contribute to our projects' documentation go to [CONTRIBUTING.md
 ## Install Celshast
 
 ```
+pip install celshast
+```
+
+Or, for development:
+
+```
 git clone https://github.com/Farama-Foundation/Celshast.git
 cd Celshast
 pip install -e .
@@ -15,7 +21,7 @@ pip install -e .
 **Add to documentation (conf.py)**
 
 ```
-html_theme = "furo"
+html_theme = "celshast"
 ```
 
 ## Build Documentation
@@ -107,7 +113,7 @@ jobs:
 
 ### Workflow to Build Docs with Versioning
 
-Celshast supports documentation versioning using an HTML menu and GitHub Actions. Every page has a JS script that injects an `html` document with the [versions menu](https://github.com/Farama-Foundation/Celshast/blob/main/src/furo/theme/furo/static/versioning/versioning_menu.html), which allows updating older versions without rebuilding.
+Celshast supports documentation versioning using an HTML menu and GitHub Actions. Every page has a JS script that injects an `html` document with the [versions menu](https://github.com/Farama-Foundation/Celshast/blob/main/src/celshast/theme/celshast/static/versioning/versioning_menu.html), which allows updating older versions without rebuilding.
 
 To enable the menu set the theme option to true in the `conf.py` file:
 
@@ -412,7 +418,7 @@ env_icon: [path to icon]
 
 ### Farama Top Menu
 
-The Farama Foundation top menu is built using the response of the API [farama.org/api/projects.json](https://farama.org/api/projects.json). The source code of the API can found [here](https://github.com/Farama-Foundation/farama.org/blob/main/api/projects.json) and the source code of the menu [here](https://github.com/Farama-Foundation/Celshast/blob/main/src/furo/theme/furo/base.html#L238)
+The Farama Foundation top menu is built using the response of the API [farama.org/api/projects.json](https://farama.org/api/projects.json). The source code of the API can found [here](https://github.com/Farama-Foundation/farama.org/blob/main/api/projects.json) and the source code of the menu [here](https://github.com/Farama-Foundation/Celshast/blob/main/src/celshast/theme/celshast/base.html#L238)
 
 ## Tutorials
 

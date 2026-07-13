@@ -1,0 +1,7 @@
+*.map
+
+# Generated files
+scripts/celshast.js*
+scripts/celshast-extensions.js
+styles/celshast.css
+styles/celshast-extensions.css

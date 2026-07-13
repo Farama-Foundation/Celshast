@@ -1,6 +1,6 @@
-"""A clean customisable Sphinx documentation theme."""
+"""A Farama Foundation Sphinx documentation theme based on Furo."""
 
-__version__ = "2023.08.19.dev1"
+__version__ = "2026.7.13"
 
 import hashlib
 import logging
@@ -23,7 +23,7 @@ from sphinx.transforms.post_transforms import SphinxPostTransform
 from .farama_directives import FaramaProjectHeadingDirective, FaramaProjectLogoDirective
 from .navigation import get_navigation_tree
 
-THEME_PATH = (Path(__file__).parent / "theme" / "furo").resolve()
+THEME_PATH = (Path(__file__).parent / "theme" / "celshast").resolve()
 
 logger = logging.getLogger(__name__)
 
@@ -176,35 +176,35 @@ def _html_page_context(
     doctree: Any,
 ) -> None:
     if "css_files" in context:
-        if "_static/styles/furo.css" not in [
+        if "_static/styles/celshast.css" not in [
             c.filename.split("?")[0] for c in context["css_files"]
         ]:
             raise ConfigError(
-                "This documentation is not using `furo.css` as the stylesheet. "
+                "This documentation is not using `celshast.css` as the stylesheet. "
                 "If you have set `html_style` in your conf.py file, remove it."
             )
 
         _add_asset_hashes(
             context["css_files"],
-            ["styles/furo.css", "styles/furo-extensions.css"],
+            ["styles/celshast.css", "styles/celshast-extensions.css"],
         )
     if "scripts" in context:
         _add_asset_hashes(
             context["scripts"],
-            ["scripts/furo.js"],
+            ["scripts/celshast.js"],
         )
 
     # Basic constants
-    context["furo_version"] = __version__
+    context["celshast_version"] = __version__
 
     # Values computed from page-level context.
-    context["furo_navigation_tree"] = _compute_navigation_tree(context)
-    context["furo_hide_toc"] = _compute_hide_toc(
+    context["celshast_navigation_tree"] = _compute_navigation_tree(context)
+    context["celshast_hide_toc"] = _compute_hide_toc(
         context, builder=app.builder, docname=pagename
     )
 
     # Inject information about styles
-    context["furo_pygments"] = {
+    context["celshast_pygments"] = {
         "light": get_pygments_style_colors(
             _KNOWN_STYLES_IN_USE["light"],
             fallbacks=dict(
@@ -229,10 +229,10 @@ def _html_page_context(
 
 
 def _builder_inited(app: sphinx.application.Sphinx) -> None:
-    if "furo" in app.config.extensions:
+    if "celshast" in app.config.extensions:
         raise ConfigError(
-            "Did you list 'furo' in the `extensions` in conf.py? "
-            "If so, please remove it. Furo does not work with non-HTML builders "
+            "Did you list 'celshast' in the `extensions` in conf.py? "
+            "If so, please remove it. Celshast does not work with non-HTML builders "
             "and specifying it as an `html_theme` is sufficient."
         )
 
@@ -241,15 +241,15 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
         "dirhtml",
     }:
         raise ConfigError(
-            "Furo is being used as an extension in a non-HTML build. "
+            "Celshast is being used as an extension in a non-HTML build. "
             "This should not happen."
         )
 
     # Our JS file needs to be loaded as soon as possible.
-    app.add_js_file("scripts/furo.js", priority=200)
+    app.add_js_file("scripts/celshast.js", priority=200)
 
     # 500 is the default priority for extensions, we want this after this.
-    app.add_css_file("styles/furo-extensions.css", priority=600)
+    app.add_css_file("styles/celshast-extensions.css", priority=600)
 
     # Add custom directives
     app.add_directive("project-logo", FaramaProjectLogoDirective)
@@ -362,7 +362,7 @@ def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
                 "myst_enable_extensions should be a list or set of strings."
             )
 
-    app.add_html_theme("furo", str(THEME_PATH))
+    app.add_html_theme("celshast", str(THEME_PATH))
 
     app.add_post_transform(WrapTableAndMathInAContainerTransform)
 

@@ -5,15 +5,15 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 module.exports = {
   devtool: "source-map",
   entry: {
-    furo: [
-      "./src/furo/assets/scripts/furo.js",
-      "./src/furo/assets/styles/furo.sass",
+    celshast: [
+      "./src/celshast/assets/scripts/celshast.js",
+      "./src/celshast/assets/styles/celshast.sass",
     ],
-    "furo-extensions": ["./src/furo/assets/styles/furo-extensions.sass"],
+    "celshast-extensions": ["./src/celshast/assets/styles/celshast-extensions.sass"],
   },
   output: {
     filename: "scripts/[name].js",
-    path: resolve(__dirname, "src/furo/theme/furo/static"),
+    path: resolve(__dirname, "src/celshast/theme/celshast/static"),
   },
   plugins: [new MiniCssExtractPlugin({ filename: "styles/[name].css" })],
   optimization: { minimizer: [`...`, new CssMinimizerPlugin()] },
