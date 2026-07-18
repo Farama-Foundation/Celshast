@@ -29,7 +29,7 @@ The repository layout is pretty standard for a Python project, with a few quirks
 
 ## Theme build process
 
-Furo's build process uses {pypi}`sphinx-theme-builder` and Webpack. Running `webpack` in the repository root will compile the theme's CSS and JS assets (`src/furo/assets/`) into the correct final files (inside `src/furo/theme/furo/static`).
+Furo's build process uses {pypi}`sphinx-theme-builder` and Webpack. Running `webpack` in the repository root will compile the theme's CSS and JS assets (`src/celshast/assets/`) into the correct final files (inside `src/celshast/theme/celshast/static`).
 
 When generating a wheel (eg: for upload, or for installing from a source distribution), `sphinx-theme-builder` will use {pypi}`nodeenv` to create an isolated NodeJS installation (using the system NodeJS version if it matches the requirements).
 
@@ -53,7 +53,7 @@ The fancy bit is that Gumshoe.js is used to highlight the currently active headi
 
 ### CSS variables for customisation
 
-This is pretty much the "USP" of this theme. In `src/furo/theme/furo/partials/_head_css_variables.html`, the user provided CSS variables are translated and written into each page's HTML. This is set up, such that these declarations overrides any other declarations made in the CSS of the theme.
+This is pretty much the "USP" of this theme. In `src/celshast/theme/celshast/partials/_head_css_variables.html`, the user provided CSS variables are translated and written into each page's HTML. This is set up, such that these declarations overrides any other declarations made in the CSS of the theme.
 
 This essentially allows the user to control the values of the CSS variables, and hence control how the theme looks.
 

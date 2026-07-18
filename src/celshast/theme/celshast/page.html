@@ -33,7 +33,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon{% if furo_hide_toc %} no-toc{% endif %}" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon{% if celshast_hide_toc %} no-toc{% endif %}" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -119,7 +119,7 @@
                 </svg>
               </button>
             </div>
-            <label class="toc-overlay-icon toc-content-icon{% if furo_hide_toc %} no-toc{% endif %}" for="__toc">
+            <label class="toc-overlay-icon toc-content-icon{% if celshast_hide_toc %} no-toc{% endif %}" for="__toc">
               <div class="visually-hidden">Toggle table of contents sidebar</div>
               <i class="icon"><svg>
                   <use href="#svg-toc"></use>
@@ -238,9 +238,9 @@
           {% endblock footer %}
         </footer>
       </div>
-      <aside class="toc-drawer{% if furo_hide_toc %} no-toc{% endif %}">
+      <aside class="toc-drawer{% if celshast_hide_toc %} no-toc{% endif %}">
         {% block right_sidebar %}
-        {% if not furo_hide_toc %}
+        {% if not celshast_hide_toc %}
         <div class="toc-sticky toc-scroll">
           <div class="toc-title-container">
             <span class="toc-title">

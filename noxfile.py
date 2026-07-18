@@ -6,7 +6,7 @@ import os
 
 import nox
 
-PACKAGE_NAME = "furo"
+PACKAGE_NAME = "celshast"
 nox.options.sessions = ["lint"]
 nox.options.default_venv_backend = "uv"
 
