@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: "18.17.1" # keep in sync with pyproject.toml
 
-      - uses: astral-sh/setup-uv@v6
+      - uses: astral-sh/setup-uv@v7
 
       - name: Build sdist and wheel
         run: uv build
