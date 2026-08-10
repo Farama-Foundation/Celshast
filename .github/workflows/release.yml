@@ -13,7 +13,7 @@ jobs:
       id-token: write # for PyPI trusted publishing
       contents: write # for the GitHub release
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - uses: actions/setup-node@v7
         with:
