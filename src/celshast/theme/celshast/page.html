@@ -151,7 +151,7 @@
               </svg>
             </a>
             {%- endif %}
-            {% if next and not meta.get("firstpage") -%}
+            {% if prev and not meta.get("firstpage") -%}
             <a class="prev-page" href="{{ prev.link }}">
               <svg class="furo-related-icon">
                 <use href="#svg-arrow-right"></use>
