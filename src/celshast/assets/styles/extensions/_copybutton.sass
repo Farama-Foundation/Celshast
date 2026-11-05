@@ -1,4 +1,9 @@
 .highlight
+  // Reserve a fixed gutter outside the scrollable code viewport so long lines
+  // never move underneath the control.
+  pre
+    margin-right: 3.75rem
+
   &:hover button.copybtn
     color: var(--color-code-foreground)
 
@@ -9,8 +14,8 @@
     // Align things correctly
     align-items: center
 
-    height: 1.25em
-    width: 1.25em
+    height: 2.75rem
+    width: 2.75rem
 
     top: 0.625rem // $code-spacing-vertical
     right: 0.5rem
@@ -29,6 +34,11 @@
     &:hover
       color: var(--color-brand-content)
       background-color: var(--color-code-background)
+
+    &:focus-visible
+      color: var(--color-brand-content)
+      outline: 0.125rem solid currentColor
+      outline-offset: 0.125rem
 
     &::after
       display: none

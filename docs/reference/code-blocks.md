@@ -2,6 +2,41 @@
 
 Code blocks and examples are an essential part of technical project documentation. Sphinx provides syntax highlighting for these out-of-the-box, through Pygments.
 
+Celshast provides shared styling and installs [sphinx-copybutton], but projects must
+enable the extension in `conf.py`:
+
+```python
+extensions = [
+    # Other extensions...
+    "sphinx_copybutton",
+]
+
+# Omit displayed line numbers and Pygments-marked console prompts from copies.
+copybutton_exclude = ".linenos, .gp"
+```
+
+No additional documentation dependency is needed. A Sphinx theme is initialized
+after configured extensions, too late to safely initialize another extension's
+configuration, so Celshast deliberately does not activate it automatically. Projects
+that already enable `sphinx-copybutton` require no integration changes.
+
+Use the appropriate console lexer (such as `python-console`) so Pygments can identify
+prompts such as `>>>` and `...`. Projects can extend the exclusion selector or use any
+other [sphinx-copybutton configuration], for example:
+
+```python
+# conf.py
+copybutton_exclude = ".linenos, .gp, .go"  # Also omit console output.
+```
+
+If a project has copy-button-specific CSS, remove rules that duplicate Celshast's
+positioning, focus, color, or responsive target styles, keeping only intentional
+project-specific customizations. The integration supports Celshast's supported Python
+and Sphinx versions; non-HTML builders are not supported by the theme.
+
+[sphinx-copybutton]: https://sphinx-copybutton.readthedocs.io/
+[sphinx-copybutton configuration]: https://sphinx-copybutton.readthedocs.io/en/latest/use.html
+
 ````{furo-demo}
 
 Code blocks in Markdown can be created in various ways.

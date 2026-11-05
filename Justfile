@@ -9,3 +9,6 @@ build:
 
 lint:
     uvx nox -s lint
+
+test:
+    uvx nox -s tests
