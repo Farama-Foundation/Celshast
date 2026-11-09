@@ -1,8 +1,8 @@
 """Regression tests for Celshast's shared copy-button integration."""
 
-from pathlib import Path
 import subprocess
 import sys
+from pathlib import Path
 
 import pytest
 from bs4 import BeautifulSoup
@@ -47,6 +47,7 @@ def test_copybutton_activation_is_explicit(
 
    >>> for value in range(2):
    ...     print(value)
+   ...
    0
    1
 
