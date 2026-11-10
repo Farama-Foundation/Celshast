@@ -1,3 +1,19 @@
+<script>
+    (() => {
+        // Current pages already load the fundraiser from their own theme assets.
+        if (document.querySelector('script[src$="/december-fundraiser.js"]')) return;
+
+        const script = document.createElement("script");
+        script.src = "/main/_static/farama/december-fundraiser.js";
+        script.onerror = () => {
+            script.onerror = null;
+            const fallback = document.createElement("script");
+            fallback.src = "/_static/farama/december-fundraiser.js";
+            document.head.append(fallback);
+        };
+        document.head.append(script);
+    })();
+</script>
 <div class="versions_menu">
     <div class="versions_menu__header">
         <span id="versions_menu-current-version"></span>
