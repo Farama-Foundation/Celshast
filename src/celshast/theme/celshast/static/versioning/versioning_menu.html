@@ -220,3 +220,22 @@
         }
     </script>
 </div>
+<script>
+    (() => {
+        // A top-level Documentation section identifies older, hardcoded menus.
+        const sections = document.querySelectorAll(
+            ".farama-header-menu__body .farama-header-menu__section-title"
+        );
+        if (!Array.from(sections).some((section) => section.textContent.trim() === "Documentation")) return;
+
+        const script = document.createElement("script");
+        script.src = "/main/_static/farama/project-menu.js";
+        script.onerror = () => {
+            script.onerror = null;
+            const fallback = document.createElement("script");
+            fallback.src = "/_static/farama/project-menu.js";
+            document.head.append(fallback);
+        };
+        document.head.append(script);
+    })();
+</script>

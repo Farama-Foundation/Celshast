@@ -225,7 +225,6 @@ def _html_page_context(
     context["html_baseurl"] = app.config.html_baseurl
 
     # Projects Menu
-    context["farama_projects_api"] = "https://farama.org/api/projects.json"
 
 
 def _builder_inited(app: sphinx.application.Sphinx) -> None:
