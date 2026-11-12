@@ -42,7 +42,11 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.githubpages",
     "myst_parser",
+    "sphinx_copybutton",
 ]
+
+# Exclude displayed line numbers and Pygments-marked console prompts from copies.
+copybutton_exclude = ".linenos, .gp"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
