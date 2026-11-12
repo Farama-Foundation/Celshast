@@ -219,4 +219,19 @@
             console.error("Invalid versioning configuration");
         }
     </script>
+    <script>
+        (() => {
+            // New builds already load the script from the footer template.
+            if (document.querySelector('script[src$="/copyright-year.js"]')) return;
+
+            const script = document.createElement("script");
+            script.src = "/main/_static/farama/copyright-year.js";
+            script.onerror = () => {
+                const fallback = document.createElement("script");
+                fallback.src = "/_static/farama/copyright-year.js";
+                document.head.append(fallback);
+            };
+            document.head.append(script);
+        })();
+    </script>
 </div>
