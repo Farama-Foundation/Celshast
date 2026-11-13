@@ -138,7 +138,7 @@
         <footer>
           {% block footer %}
           <div class="related-pages">
-            {% if next and not meta.get("lastpage") -%}
+            {% if next and not (meta and "lastpage" in meta) -%}
             <a class="next-page" href="{{ next.link }}">
               <div class="page-info">
                 <div class="context">
@@ -151,7 +151,7 @@
               </svg>
             </a>
             {%- endif %}
-            {% if next and not meta.get("firstpage") -%}
+            {% if prev and not (meta and "firstpage" in meta) -%}
             <a class="prev-page" href="{{ prev.link }}">
               <svg class="furo-related-icon">
                 <use href="#svg-arrow-right"></use>

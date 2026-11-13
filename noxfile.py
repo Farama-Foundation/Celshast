@@ -70,6 +70,8 @@ def docs(session):
     session.install("-r", "docs/requirements.txt")
     session.install(".")
 
+    session.run("python", "-m", "unittest", "discover", "-s", "tests", "-v")
+
     # Generate documentation into `build/docs`
     session.run("sphinx-build", "-b", "dirhtml", "-v", "docs/", "build/docs")
 
