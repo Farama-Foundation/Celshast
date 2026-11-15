@@ -1,6 +1,6 @@
 """A Farama Foundation Sphinx documentation theme based on Furo."""
 
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 
 import hashlib
 import logging
