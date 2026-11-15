@@ -234,4 +234,19 @@
             document.head.append(script);
         })();
     </script>
+    <script>
+        (() => {
+            // Archived docs versions were built before the shared Farama header
+            // script existed, and this file is the only thing they load at view
+            // time, so load the script for them here. Header changes belong in
+            // that script (in the farama.org repository), not in this file.
+            const src = "https://farama.org/assets/docs/shared.js";
+            // Current builds already load it from the page template.
+            if (document.querySelector(`script[src="${src}"]`)) return;
+
+            const script = document.createElement("script");
+            script.src = src;
+            document.head.append(script);
+        })();
+    </script>
 </div>
