@@ -85,7 +85,9 @@ class _FuroDemoDirective(SphinxDirective):
         self.assert_has_content()
 
         container = nodes.container()
-        transated_content = _translate_into_tab_demo(self.block_text)
+        # Not `self.block_text`: since myst-parser 5.2 that is the whole
+        # directive, fences included, as it is in docutils.
+        transated_content = _translate_into_tab_demo("\n".join(self.content))
         self.state.nested_parse(transated_content, 0, container)
         return [container]
 
