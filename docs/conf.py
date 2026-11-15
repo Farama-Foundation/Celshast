@@ -38,6 +38,9 @@ extensions = [
     "sphinx_inline_tabs",
 ]
 
+# Exclude displayed line numbers and Pygments-marked console prompts from copies.
+copybutton_exclude = ".linenos, .gp"
+
 # -- Options for extlinks ----------------------------------------------------
 #
 
