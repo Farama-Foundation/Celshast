@@ -224,8 +224,8 @@ def _html_page_context(
     # Base url
     context["html_baseurl"] = app.config.html_baseurl
 
-    # Projects Menu
-    context["farama_projects_api"] = "https://farama.org/api/projects.json"
+    # Shared header script (projects menu, fundraising banner)
+    context["farama_shared_script"] = "https://farama.org/assets/docs/shared.js"
 
 
 def _builder_inited(app: sphinx.application.Sphinx) -> None:

@@ -418,7 +418,9 @@ env_icon: [path to icon]
 
 ### Farama Top Menu
 
-The Farama Foundation top menu is built using the response of the API [farama.org/api/projects.json](https://farama.org/api/projects.json). The source code of the API can found [here](https://github.com/Farama-Foundation/farama.org/blob/main/api/projects.json) and the source code of the menu [here](https://github.com/Farama-Foundation/Celshast/blob/main/src/celshast/theme/celshast/base.html#L238)
+The Farama Foundation top menu and the annual fundraising banner are not part of the theme. Every page loads [farama.org/assets/docs/shared.js](https://farama.org/assets/docs/shared.js), which builds the menu from the API [farama.org/api/projects.json](https://farama.org/api/projects.json) and shows the banner. Both live in the [farama.org repository](https://github.com/Farama-Foundation/farama.org) ([script](https://github.com/Farama-Foundation/farama.org/blob/main/assets/docs/shared.js), [API](https://github.com/Farama-Foundation/farama.org/blob/main/api/projects.json), [project list](https://github.com/Farama-Foundation/farama.org/blob/main/_data/projects.yml)), so a change there, such as a new project, a new logo, or a banner, is live on every docs site as soon as farama.org deploys, without a Celshast release or a docs rebuild.
+
+Docs versions built before this script existed load it through the [versions menu](https://github.com/Farama-Foundation/Celshast/blob/main/src/celshast/theme/celshast/static/versioning/versioning_menu.html), so they need `versioning` enabled to receive header changes.
 
 ## Tutorials
 
