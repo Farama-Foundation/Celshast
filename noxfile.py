@@ -70,8 +70,6 @@ def docs(session):
     session.install("-r", "docs/requirements.txt")
     session.install(".")
 
-    session.run("python", "-m", "unittest", "discover", "-s", "tests", "-v")
-
     # Generate documentation into `build/docs`
     session.run("sphinx-build", "-b", "dirhtml", "-v", "docs/", "build/docs")
 
@@ -99,7 +97,8 @@ def lint(session):
 
 @nox.session(reuse_venv=True)
 def tests(session):
-    session.install("pytest")
+    # The tests build real Sphinx projects, some of them with MyST.
+    session.install("pytest", "-r", "docs/requirements.txt")
     session.install(".")
     session.run(
         "pytest",
