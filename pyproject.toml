@@ -19,6 +19,7 @@ dependencies = [
   "beautifulsoup4",
   "sphinx >= 6.0,<8.0",
   "sphinx-basic-ng",
+  "sphinx-copybutton >= 0.5.2",
   "pygments >= 2.7",
   "matplotlib",
 ]

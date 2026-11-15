@@ -1,5 +1,5 @@
 # Basic sanity checks for pull requests.
-# Both jobs shell out to the nox sessions in noxfile.py, so CI and local
+# All jobs shell out to the nox sessions in noxfile.py, so CI and local
 # development (see the Justfile) run exactly the same commands.
 name: CI
 
@@ -32,6 +32,25 @@ jobs:
 
       # GitHub sets CI=true, which makes the session add --show-diff-on-failure.
       - run: uvx nox -s lint
+
+  tests:
+    name: Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12" # keep in sync with mise.toml
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "18.17.1" # keep in sync with pyproject.toml
+
+      - uses: astral-sh/setup-uv@v7
+
+      # Installs the package (which builds the theme assets), then runs pytest.
+      - run: uvx nox -s tests
 
   docs:
     name: Build docs

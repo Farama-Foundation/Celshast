@@ -95,6 +95,18 @@ def lint(session):
     session.run("pre-commit", "run", *args)
 
 
+@nox.session(reuse_venv=True)
+def tests(session):
+    # The tests build real Sphinx projects, some of them with MyST.
+    session.install("pytest", "-r", "docs/requirements.txt")
+    session.install(".")
+    session.run(
+        "pytest",
+        *session.posargs,
+        env={"PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1"},
+    )
+
+
 @nox.session
 def release(session):
     version_file = f"src/{PACKAGE_NAME}/__init__.py"
