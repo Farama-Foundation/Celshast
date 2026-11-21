@@ -75,7 +75,7 @@ html_theme = "celshast"
 html_title = "<PROJECT> Documentation"
 html_baseurl = "https://<PROJECT_LOW>.farama.org"
 html_copy_source = False
-html_favicon = "_static/img/favicon.png"
+html_favicon = "_static/img/favicon.svg"
 html_theme_options = {
     "light_logo": "img/<PROJECT_LOW>_black.svg",
     "dark_logo": "img/<PROJECT_LOW>_white.svg",
